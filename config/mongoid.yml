@@ -1,0 +1,8 @@
+development:
+  clients:
+    default:
+      database: stones
+      use_utc: false
+      use_activesupport_time_zone: true
+      hosts:
+        - localhost:27017
