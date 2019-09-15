@@ -1,169 +1,123 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="HandheldFriendly" content="true">
 
-    <title>Stones</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<div id="intro" class="section">
+    <h1>Qui sommes-nous?</h1>
 
-    <%= stylesheet_link_tag    'homepage_manifest', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <h2>En bref</h2>
+    <p>
+        <img src="images/horde_crest.png" alt="horde">
+        Les "Stones", créés par un groupe d'amis ayant évolué dans des guildes HL sur Khaz Modan et Dalaran et ayant l'expérience nécessaire pour clean le contenu PVE de Classic, souhaitent rallumer la chaudière et retrouver leur premier amour. Etant tous majeurs en 2005, la moyenne d'âge actuelle est de 35ans. Nous jouons sur le serveur français Auberdine, côté Horde.
+    </p>
+    <h2>Nos objectifs</h2>
+    <p>
+        Nos objectifs sont assez simples. Nous voulons clean ensemble le contenu intégral que nous offre WoW Classic avec un temps de jeu réduit.
+        Ayant tous des obligations qui réduisent notre temps de jeu, nous souhaitons rassembler le maximum de personnes pour clean les raids avant chaque reset en 2 soirs par semaine (jours pas encore déterminés). Connaissant parfaitement ce contenu, l'avancée sera de qualité.
+    </p>
+    <p>L'ambiance que nous recherchons est celle de la belle époque. Nous avancerons ensemble dans un esprit relax sur les long moments sur les trash... et respecterons ce qui a fait la force de ce jeu.
+    </p>
+</div>
 
+<div id="first" class="section">
+    <h1>Recrutement</h1>
+    <h2>Profil recherché</h2>
+    <p>
+        Nous cherchons des personnes ayant le même état d'esprit que le nôtre : si vous souhaitez découvrir le jeu ou le re-découvrir, partager ensemble de véritables moments communautaires et clean le contenu HL, vous êtes au bon endroit!
+    </p>
 
-    <link href="https://fonts.googleapis.com/css?family=Manjari|Montserrat&display=swap" rel="stylesheet">
-
-    <link rel="icon"
-        type="image/png"
-        href="images/favicon-16x16.png">
-</head>
-
-
-
-<body>
-    <div id="wrapper">
-        <div class="logo">
-            <img src="images/stones_logo01.png" alt="logo"/>
-        </div>
-
-        <nav id="nav">
-            <ul>
-                <li><a href="#intro" class="scrolllink active">Présentation</a></li>
-                <li><a href="#first" class="scrolllink">Recrutement</a></li>
-                <li><a href="#second" class="scrolllink">Contact</a></li>
-                <li><%= link_to "S'enregistrer", new_user_registration_path %></li>
-                <li><a href="https://www.guilded.gg/Stones-Auberdine" target="_blank">Calendrier</a></li>
-            </ul>
-        </nav>
-
-        <div id="container">
-            <div id="intro" class="section">
-                <h1>Qui sommes-nous?</h1>
-
-                <h2>En bref</h2>
-                <p>
-                    <img src="images/horde_crest.png" alt="horde">
-                    Les "Stones", créés par un groupe d'amis ayant évolué dans des guildes HL sur Khaz Modan et Dalaran et ayant l'expérience nécessaire pour clean le contenu PVE de Classic, souhaitent rallumer la chaudière et retrouver leur premier amour. Etant tous majeurs en 2005, la moyenne d'âge actuelle est de 35ans. Nous jouons sur le serveur français Auberdine, côté Horde.
-                </p>
-                <h2>Nos objectifs</h2>
-                <p>
-                    Nos objectifs sont assez simples. Nous voulons clean ensemble le contenu intégral que nous offre WoW Classic avec un temps de jeu réduit.
-                    Ayant tous des obligations qui réduisent notre temps de jeu, nous souhaitons rassembler le maximum de personnes pour clean les raids avant chaque reset en 2 soirs par semaine (jours pas encore déterminés). Connaissant parfaitement ce contenu, l'avancée sera de qualité.
-                </p>
-                <p>L'ambiance que nous recherchons est celle de la belle époque. Nous avancerons ensemble dans un esprit relax sur les long moments sur les trash... et respecterons ce qui a fait la force de ce jeu.
-                </p>
-            </div>
-
-            <div id="first" class="section">
-                <h1>Recrutement</h1>
-                <h2>Profil recherché</h2>
-                <p>
-                    Nous cherchons des personnes ayant le même état d'esprit que le nôtre : si vous souhaitez découvrir le jeu ou le re-découvrir, partager ensemble de véritables moments communautaires et clean le contenu HL, vous êtes au bon endroit!
-                </p>
-
-                <h2>Classes recherchées</h2>
-                <p>
-                    Nous recherchons activement des soigneurs (toutes classes).
-                </p>
-                <div class="recruit-class">
-                    <img src="images/icons/druid.png" alt="druid" class="class-icon"> <span class="druid-title">Druide</span>
-                    <p><img src="images/icons/druid_balance.jpg" alt="balance" class="spec-icon">
-                        Equilibre : <span class="status-closed">fermé</span></p>
-                    <p><img src="images/icons/druid_feral.jpg" alt="feral" class="spec-icon">
-                        Farouche : <span class="status-open">ouvert</span></p>
-                    <p><img src="images/icons/druid_feral.jpg" alt="feral" class="spec-icon">
-                        Guardien : <span class="status-closed">fermé</span></p>
-                    <p><img src="images/icons/druid_restoration.jpg" alt="restoration" class="spec-icon">
-                        Restauration : <span class="status-open">ouvert</span></p>
-                </div>
-
-                <div class="recruit-class">
-                    <img src="images/icons/hunter.png" alt="hunter" class="class-icon"> <span class="hunter-title">Chasseur</span>
-                    <p><img src="images/icons/hunter_beastmastery.jpg" alt="bm" class="spec-icon">
-                        Maîtrise des bêtes : <span class="status-open">ouvert</span></p>
-                    <p><img src="images/icons/hunter_marksmanship.jpg" alt="mm" class="spec-icon">
-                        Précision : <span class="status-open">ouvert</span></p>
-                    <p><img src="images/icons/hunter_survival.jpg" alt="survival" class="spec-icon">
-                        Survie : <span class="status-closed">fermé</span></p>
-                </div>
-
-                <div class="recruit-class">
-                    <img src="images/icons/mage.png" alt="mage" class="class-icon"> <span class="mage-title">Mage</span>
-                    <p><img src="images/icons/mage_arcane.jpg" alt="arcane" class="spec-icon">
-                        Arcane : <span class="status-closed">fermé</span></p>
-                    <p><img src="images/icons/mage_fire.jpg" alt="fire" class="spec-icon">
-                        Feu : <span class="status-closed">fermé</span></p>
-                    <p><img src="images/icons/mage_frost.jpg" alt="frost" class="spec-icon">
-                        Givre : <span class="status-closed">fermé</span></p>
-                </div>
-
-                <div class="recruit-class">
-                    <img src="images/icons/priest.png" alt="priest" class="class-icon"> <span class="priest-title">Prêtre</span>
-                    <p><img src="images/icons/priest_discipline.jpg" alt="discipline" class="spec-icon">
-                        Discipline : <span class="status-open">ouvert</span></p>
-                    <p><img src="images/icons/priest_holy.jpg" alt="holy" class="spec-icon">
-                        Sacré : <span class="status-open">ouvert</span></p>
-                    <p><img src="images/icons/priest_shadow.jpg" alt="shadow" class="spec-icon">
-                        Ombre : <span class="status-open">ouvert</span></p>
-                </div>
-
-                <div class="recruit-class">
-                    <img src="images/icons/rogue.png" alt="rogue" class="class-icon"> <span class="rogue-title">Voleur</span>
-                    <p><img src="images/icons/rogue_assassination.jpg" alt="assa" class="spec-icon">
-                        Assassinat : <span class="status-open">ouvert</span></p>
-                    <p><img src="images/icons/rogue_combat.jpg" alt="combat" class="spec-icon">
-                        Combat : <span class="status-open">ouvert</span></p>
-                    <p><img src="images/icons/rogue_subtlety.jpg" alt="sub" class="spec-icon">
-                        Finesse : <span class="status-closed">fermé</span></p>
-                </div>
-
-                <div class="recruit-class">
-                    <img src="images/icons/shaman.png" alt="shaman" class="class-icon"> <span class="shaman-title">Chaman</span>
-                    <p><img src="images/icons/shaman_elemental.jpg" alt="elem" class="spec-icon">
-                        Elémentaire : <span class="status-open">ouvert</span></p>
-                    <p><img src="images/icons/shaman_enhancement.jpg" alt="enhanc" class="spec-icon">
-                        Amélioration : <span class="status-closed">fermé</span></p>
-                    <p><img src="images/icons/shaman_restoration.jpg" alt="restoration" class="spec-icon">
-                        Restauration : <span class="status-open">ouvert</span></p>
-                </div>
-
-                <div class="recruit-class">
-                    <img src="images/icons/warlock.png" alt="warlock" class="class-icon"> <span class="warlock-title">Démoniste</span>
-                    <p><img src="images/icons/warlock_affliction.jpg" alt="affli" class="spec-icon">
-                        Affliction : <span class="status-open">ouvert</span></p>
-                    <p><img src="images/icons/warlock_demonology.jpg" alt="demono" class="spec-icon">
-                        Démonologie : <span class="status-open">ouvert</span></p>
-                    <p><img src="images/icons/warlock_destruction.jpg" alt="destro" class="spec-icon">
-                        Destruction : <span class="status-open">ouvert</span></p>
-                </div>
-
-                <div class="recruit-class">
-                    <img src="images/icons/warrior.png" alt="warrior" class="class-icon"> <span class="warrior-title">Guerrier</span>
-                    <p><img src="images/icons/warrior_arms.jpg" alt="arms" class="spec-icon">
-                        Armes : <span class="status-open">ouvert</span></p>
-                    <p><img src="images/icons/warrior_fury.jpg" alt="fury" class="spec-icon">
-                        Fureur : <span class="status-open">ouvert</span></p>
-                    <p><img src="images/icons/warrior_protection.jpg" alt="protection" class="spec-icon">
-                        Protection : <span class="status-closed">fermé</span></p>
-                </div>
-
-            </div>
-
-            <div id="second" class="section">
-                <h1>Contact</h1>
-                Vous souhaitez discuter avec nous de la guilde? <a href="https://discord.gg/4vGT5Rd">Rejoignez-nous sur Discord !</a>
-                <iframe src="https://discordapp.com/widget?id=614114399250284556&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
-
-                <p>
-                    Vous préférez nous parler directement en jeu?
-                    N'hésitez pas à contacter <b>Ashwar</b>, <b>Krazalkal</b>, <b>Ericles</b>, <b>Ølé</b> ou <b>Sheliö</b> (serveur <b>Auberdine</b>).
-                </p>
-            </div>
-        </div>
+    <h2>Classes recherchées</h2>
+    <p>
+        Nous recherchons activement des soigneurs (toutes classes).
+    </p>
+    <div class="recruit-class">
+        <img src="images/icons/druid.png" alt="druid" class="class-icon"> <span class="druid-title">Druide</span>
+        <p><img src="images/icons/druid_balance.jpg" alt="balance" class="spec-icon">
+            Equilibre : <span class="status-closed">fermé</span></p>
+        <p><img src="images/icons/druid_feral.jpg" alt="feral" class="spec-icon">
+            Farouche : <span class="status-open">ouvert</span></p>
+        <p><img src="images/icons/druid_feral.jpg" alt="feral" class="spec-icon">
+            Guardien : <span class="status-closed">fermé</span></p>
+        <p><img src="images/icons/druid_restoration.jpg" alt="restoration" class="spec-icon">
+            Restauration : <span class="status-open">ouvert</span></p>
     </div>
 
-    <%= javascript_include_tag 'homepage_manifest', 'data-turbolinks-track': 'reload' %>
-</body>
-</html>
+    <div class="recruit-class">
+        <img src="images/icons/hunter.png" alt="hunter" class="class-icon"> <span class="hunter-title">Chasseur</span>
+        <p><img src="images/icons/hunter_beastmastery.jpg" alt="bm" class="spec-icon">
+            Maîtrise des bêtes : <span class="status-open">ouvert</span></p>
+        <p><img src="images/icons/hunter_marksmanship.jpg" alt="mm" class="spec-icon">
+            Précision : <span class="status-open">ouvert</span></p>
+        <p><img src="images/icons/hunter_survival.jpg" alt="survival" class="spec-icon">
+            Survie : <span class="status-closed">fermé</span></p>
+    </div>
+
+    <div class="recruit-class">
+        <img src="images/icons/mage.png" alt="mage" class="class-icon"> <span class="mage-title">Mage</span>
+        <p><img src="images/icons/mage_arcane.jpg" alt="arcane" class="spec-icon">
+            Arcane : <span class="status-closed">fermé</span></p>
+        <p><img src="images/icons/mage_fire.jpg" alt="fire" class="spec-icon">
+            Feu : <span class="status-closed">fermé</span></p>
+        <p><img src="images/icons/mage_frost.jpg" alt="frost" class="spec-icon">
+            Givre : <span class="status-closed">fermé</span></p>
+    </div>
+
+    <div class="recruit-class">
+        <img src="images/icons/priest.png" alt="priest" class="class-icon"> <span class="priest-title">Prêtre</span>
+        <p><img src="images/icons/priest_discipline.jpg" alt="discipline" class="spec-icon">
+            Discipline : <span class="status-open">ouvert</span></p>
+        <p><img src="images/icons/priest_holy.jpg" alt="holy" class="spec-icon">
+            Sacré : <span class="status-open">ouvert</span></p>
+        <p><img src="images/icons/priest_shadow.jpg" alt="shadow" class="spec-icon">
+            Ombre : <span class="status-open">ouvert</span></p>
+    </div>
+
+    <div class="recruit-class">
+        <img src="images/icons/rogue.png" alt="rogue" class="class-icon"> <span class="rogue-title">Voleur</span>
+        <p><img src="images/icons/rogue_assassination.jpg" alt="assa" class="spec-icon">
+            Assassinat : <span class="status-open">ouvert</span></p>
+        <p><img src="images/icons/rogue_combat.jpg" alt="combat" class="spec-icon">
+            Combat : <span class="status-open">ouvert</span></p>
+        <p><img src="images/icons/rogue_subtlety.jpg" alt="sub" class="spec-icon">
+            Finesse : <span class="status-closed">fermé</span></p>
+    </div>
+
+    <div class="recruit-class">
+        <img src="images/icons/shaman.png" alt="shaman" class="class-icon"> <span class="shaman-title">Chaman</span>
+        <p><img src="images/icons/shaman_elemental.jpg" alt="elem" class="spec-icon">
+            Elémentaire : <span class="status-open">ouvert</span></p>
+        <p><img src="images/icons/shaman_enhancement.jpg" alt="enhanc" class="spec-icon">
+            Amélioration : <span class="status-closed">fermé</span></p>
+        <p><img src="images/icons/shaman_restoration.jpg" alt="restoration" class="spec-icon">
+            Restauration : <span class="status-open">ouvert</span></p>
+    </div>
+
+    <div class="recruit-class">
+        <img src="images/icons/warlock.png" alt="warlock" class="class-icon"> <span class="warlock-title">Démoniste</span>
+        <p><img src="images/icons/warlock_affliction.jpg" alt="affli" class="spec-icon">
+            Affliction : <span class="status-open">ouvert</span></p>
+        <p><img src="images/icons/warlock_demonology.jpg" alt="demono" class="spec-icon">
+            Démonologie : <span class="status-open">ouvert</span></p>
+        <p><img src="images/icons/warlock_destruction.jpg" alt="destro" class="spec-icon">
+            Destruction : <span class="status-open">ouvert</span></p>
+    </div>
+
+    <div class="recruit-class">
+        <img src="images/icons/warrior.png" alt="warrior" class="class-icon"> <span class="warrior-title">Guerrier</span>
+        <p><img src="images/icons/warrior_arms.jpg" alt="arms" class="spec-icon">
+            Armes : <span class="status-open">ouvert</span></p>
+        <p><img src="images/icons/warrior_fury.jpg" alt="fury" class="spec-icon">
+            Fureur : <span class="status-open">ouvert</span></p>
+        <p><img src="images/icons/warrior_protection.jpg" alt="protection" class="spec-icon">
+            Protection : <span class="status-closed">fermé</span></p>
+    </div>
+
+</div>
+
+<div id="second" class="section">
+    <h1>Contact</h1>
+    Vous souhaitez discuter avec nous de la guilde? <a href="https://discord.gg/4vGT5Rd">Rejoignez-nous sur Discord !</a>
+    <iframe src="https://discordapp.com/widget?id=614114399250284556&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+
+    <p>
+        Vous préférez nous parler directement en jeu?
+        N'hésitez pas à contacter <b>Ashwar</b>, <b>Krazalkal</b>, <b>Ericles</b>, <b>Ølé</b> ou <b>Sheliö</b> (serveur <b>Auberdine</b>).
+    </p>
+</div>
