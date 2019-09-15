@@ -10,7 +10,15 @@
   </head>
 
   <body>
-    <%= link_to "S'enregistrer", new_user_registration_path %>
-    <%= yield %>
+    <div id="wrapper">
+      <div id="navbar">
+        <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
+      </div>
+
+      <div id="container">
+        <%= yield %>
+      </div>
+
+    </div>
   </body>
 </html>
