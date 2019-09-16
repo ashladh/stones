@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>StonesRails</title>
+    <title>Stones</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'member', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'member', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'member', media: 'all' %>
+    <link href="https://fonts.googleapis.com/css?family=Manjari|Montserrat&display=swap" rel="stylesheet">
+    <link rel="icon" type="/image/png" href="/images/favicon-16x16.png">
   </head>
 
   <body>
     <div id="wrapper">
-      <div id="navbar">
-        <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
-      </div>
+
+      <nav id="nav">
+        <ul>
+          <li><%= link_to "Dashboard", member_path %></li>
+          <li><%= link_to "Calendrier", member_calendar_path %></li>
+          <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </nav>
 
       <div id="container">
         <%= yield %>
       </div>
 
     </div>
+
+
+    <%= javascript_include_tag 'member' %>
   </body>
 </html>

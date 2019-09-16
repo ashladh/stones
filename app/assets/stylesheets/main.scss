@@ -1,0 +1,36 @@
+#wrapper {
+    margin: 0 auto;
+}
+
+
+#calendar thead,
+#calendar tbody,
+#calendar .fc-row,
+#calendar .fc-head-container,
+#calendar .fc-widget-content,
+#calendar .fc-day-header {
+    border-color: transparent;
+}
+
+#calendar td.fc-day, #calendar th {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+
+#calendar td.fc-day, #calendar td.fc-day-top {
+    background: image-url('calendar_cell.png');
+    background-size: cover;
+}
+
+
+#calendar .fc-button-primary {
+    background-color: #b30000;
+    color: black;
+    border: none;
+}
+
+
+#calendar .fc-event {
+    background-color: rgba(206, 97, 42, 0.5);
+    border-color: rgb(206, 97, 42);
+}

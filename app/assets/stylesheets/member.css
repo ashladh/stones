@@ -13,4 +13,6 @@
  *= require reset
  *= require fullcalendar
  *= require fullcalendar_daygrid
+ *= require shared
+ *= require main
  */

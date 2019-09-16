@@ -13,11 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 start: '2019-08-01'
             },
             {
-                title: 'Long Event',
-                start: '2019-08-07',
-                end: '2019-08-10'
-            },
-            {
                 groupId: 999,
                 title: 'Repeating Event',
                 start: '2019-08-09T16:00:00'
@@ -26,11 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 groupId: 999,
                 title: 'Repeating Event',
                 start: '2019-08-16T16:00:00'
-            },
-            {
-                title: 'Conference',
-                start: '2019-08-11',
-                end: '2019-08-13'
             },
             {
                 title: 'Meeting',

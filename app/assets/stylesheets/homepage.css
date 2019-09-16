@@ -1,24 +1,5 @@
-html {
-    height: 100%;
-}
-
-body {
-    background: linear-gradient(#1f1818, #831515);
-    height: 100%;
-    margin: 0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: 'Montserrat', sans-serif;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
 #wrapper {
     position: absolute;
-    width: 960px;
     top: 0;
     left: calc(50% - 480px);
 }
@@ -33,48 +14,13 @@ a {
     height: 100%;
 }
 
+
 #nav {
     position: absolute;
     top: 350px;
     left: 0;
     width: 100%;
-    color: #ecdcdc;
-    padding: 1em;
-    box-sizing: border-box;
-    background-color: black;
-    border-top-left-radius: 0.25em;
-    border-top-right-radius: 0.25em;
-    cursor: pointer;
-    text-align: center;
-    font-family: 'Manjari', sans-serif;
     z-index: 1;
-}
-
-#nav ul {
-    list-style: none;
-}
-
-#nav ul li {
-    display: inline-block;
-    margin: 0 0.35em;
-    padding: 0;
-    vertical-align: middle;
-}
-
-#nav ul li a {
-    display: inline-block;
-    height: 2.25em;
-    line-height: 2.25em;
-    padding: 0 1.25em;
-    border: 0;
-    border-radius: 8px;
-    box-shadow: inset 0 0 0 1px transparent;
-}
-
-#nav ul li a.active {
-    background-color: #b30000;
-    color: black;
-    box-shadow: none;
 }
 
 
@@ -83,12 +29,6 @@ a {
     top: 417px;
     left: 0;
     width: 100%;
-    background: rgba(51, 0, 0, .75);
-    color: #ecdcdc;
-    border-bottom-right-radius: 0.25em;
-    border-bottom-left-radius: 0.25em;
-    padding: 2em;
-    box-sizing: border-box;
 }
 
 .sticky #nav {
