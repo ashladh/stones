@@ -150,12 +150,12 @@ a {
 
 .recruit-class {
     float: left;
-    border: 2px solid #cb8686;
+    background: rgba(203, 134, 134, 0.1);
     border-radius: 25px;
     padding: .9em;
     margin: .5em;
     width: 240px;
-    height: 180px;
+    height: 160px;
     text-align: center;
 }
 

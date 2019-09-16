@@ -13,4 +13,8 @@
 //= require rails-ujs
 //= require turbolinks
 //= require jquery-3.4.1.min
+//= require fullcalendar
+//= require fullcalendar_interaction
+//= require fullcalendar_daygrid
+//= require main
 
