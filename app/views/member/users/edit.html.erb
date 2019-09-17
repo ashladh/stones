@@ -1,0 +1,13 @@
+<%= form_for [:member, @user] do |f| %>
+
+    <div><%= f.text_field :email %></div>
+    <div><%= f.text_field :nickname %></div>
+    <div><%= f.select :rank, options_for_select({
+        "Enregistré": "registered",
+        "Membre": "member",
+        "Officier": "officer",
+        "GuildMaster": "gm"
+    }, @user.rank) %>
+    <div><%= f.submit %></div>
+
+<% end %>

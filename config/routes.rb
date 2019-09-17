@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :member do
     get "/", to: "pages#dashboard"
     get "/calendar", to: "pages#calendar"
+    resources :users
   end
   root to: 'pages#index'
 end

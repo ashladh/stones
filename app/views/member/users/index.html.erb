@@ -1,0 +1,7 @@
+<% @users.each do |user| %>
+  <%= user.email %>
+  <%= user.nickname %>
+  <%= user.rank %>
+  <%= link_to "Editer", edit_member_user_path(user) %>
+  <%= link_to "Supprimer", member_user_path(user), method: :delete, confirm: "Confirmer la suppression" %>
+<% end %>
