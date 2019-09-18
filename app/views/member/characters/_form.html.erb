@@ -1,0 +1,18 @@
+<%= form_for [:member, character] do |f| %>
+    <div>Nom : <%= f.text_field :name, class: "text-field" %></div>
+
+    <div class="character-class">Classe : <%= f.select :playable_class, options_for_select(playable_class_labels, character.playable_class), {include_blank: true}, {class: "select"} %></div>
+
+    <div class="character-spec" data-spec="<%= character.spec %>"><%= f.select :spec, options_for_select({}), {}, {class: "select"} %></div>
+
+    <div>Niveau : <%= f.number_field :level, class: "text-field"%></div>
+
+    <div class="checkbox-container">Personnage principal : <%= f.check_box(:main) %>
+
+    <div class="checkbox-container">Maître de classe : <%= f.check_box(:class_master) %>
+
+    <div class="officer-note">Note d'officier : <%= f.text_field :officer_note %>
+
+    <div><%= f.submit class:"button" %></div>
+
+<% end %>

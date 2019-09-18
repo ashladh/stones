@@ -34,3 +34,29 @@
     background-color: rgba(206, 97, 42, 0.5);
     border-color: rgb(206, 97, 42);
 }
+
+.text-field {
+    padding: .5em;
+    margin: 1em 0 0 0;
+    border-radius: 5px;
+}
+
+.button {
+    border-radius: 5px;
+    padding: .5em;
+    margin: 1em 0 1em 0;
+}
+
+.select {
+    margin: 1em 0 0 0;
+}
+
+.userlist-nickname, .characterlist-name {
+    padding: .5em;
+    font-size: 1.3em;
+}
+
+.userlist-email {
+    font-style: italic;
+    font-size: .8em;
+}

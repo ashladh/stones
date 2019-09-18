@@ -1,0 +1,10 @@
+<div><%= link_to "Nouveau personnage", new_member_character_path %></div>
+<div>
+  <% @characters.each do |character| %>
+    <div>
+      <span class="characterlist-name"><%= character.name %></span>
+      <%= link_to "Editer", edit_member_character_path(character), class: "button" %>
+      <%= link_to "Supprimer", member_character_path(character), class: "button", method: :delete %>
+    </div>
+  <% end %>
+</div>

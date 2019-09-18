@@ -1,7 +1,7 @@
 <% @users.each do |user| %>
-  <%= user.email %>
-  <%= user.nickname %>
-  <%= user.rank %>
-  <%= link_to "Editer", edit_member_user_path(user) %>
-  <%= link_to "Supprimer", member_user_path(user), method: :delete, confirm: "Confirmer la suppression" %>
+  <span class="userlist-nickname"><%= user.nickname %></span>
+  <span class="userlist-rank"><%= user.rank %></span>
+  <span class="userlist-email"><%= user.email %></span>
+  <%= link_to "Editer", edit_member_user_path(user), class: "button" %>
+  <%= link_to "Supprimer", member_user_path(user), class: "button", method: :delete, confirm: "Confirmer la suppression" %>
 <% end %>

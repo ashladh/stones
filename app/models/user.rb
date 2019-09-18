@@ -38,5 +38,6 @@ class User
 
   field :nickname
 
+  has_many :characters
 
 end

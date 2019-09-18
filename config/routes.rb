@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get "/", to: "pages#dashboard"
     get "/calendar", to: "pages#calendar"
     resources :users
+    resources :characters
   end
   root to: 'pages#index'
 end
