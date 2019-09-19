@@ -165,4 +165,8 @@ $(function () {
         return $('<option>').attr({value: value}).text(label)
     }
 
+    $(document).ready(function() {
+        $('.professions-select').select2()
+    })
+
 })

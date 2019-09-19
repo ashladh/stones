@@ -8,6 +8,8 @@
             <th>-</th>
             <th>Classe</th>
             <th>Spécialisation</th>
+            <th>Métiers principaux</th>
+            <th>Métiers secondaires</th>
             <th></th>
             <th></th>
         </tr>
@@ -19,6 +21,8 @@
                 <td><%= character.level %></td>
                 <td><%= character.playable_class %></td>
                 <td><%= character.spec %></td>
+                <td><%= character.primary_professions.join(', ') %></td>
+                <td><%= character.secondary_professions.join(', ') %></td>
                 <td><%= link_to "Editer", edit_member_character_path(character), class: "button" %></td>
                 <td><%= link_to "Supprimer", member_character_path(character), class: "button", method: :delete %></td>
             </tr>

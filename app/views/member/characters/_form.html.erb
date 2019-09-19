@@ -7,6 +7,14 @@
 
     <div>Niveau : <%= f.number_field :level, class: "text-field"%></div>
 
+    <div class="professions-container">Métiers principaux :
+        <%= f.select :primary_professions, options_for_select(primary_professions_labels, character.primary_professions), {}, {multiple: true, class: "professions-select"} %>
+    </div>
+
+    <div class="professions-container">Métiers secondaires :
+        <%= f.select :secondary_professions, options_for_select(secondary_professions_labels, character.secondary_professions), {}, {multiple: true, class: "professions-select"} %>
+    </div>
+
     <div class="checkbox-container">Personnage principal : <%= f.check_box(:main) %>
 
     <div class="checkbox-container">Maître de classe : <%= f.check_box(:class_master) %>

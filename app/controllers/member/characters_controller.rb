@@ -36,7 +36,7 @@ module Member
     private
 
     def character_params
-      params[:character].permit(:name, :playable_class, :level, :spec, :professions, :main, :officer_note, :class_master)
+      params[:character].permit(:name, :playable_class, :level, :spec, :main, :officer_note, :class_master, :primary_professions => [], :secondary_professions => [])
     end
 
   end
