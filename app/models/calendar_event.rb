@@ -1,6 +1,7 @@
 class CalendarEvent
 
   include Mongoid::Document
+  include Mongoid::Attributes::Dynamic
 
   field :date, type: DateTime
   field :name, type: String, default: ""
