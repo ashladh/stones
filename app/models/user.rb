@@ -24,6 +24,6 @@ class User
 
   has_many :characters
   has_many :histories
-  has_many :calendar_events, as: :owner
+  has_many :calendar_events
 
 end

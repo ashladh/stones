@@ -61,61 +61,21 @@ $(function () {
             return
         }
 
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            locale: 'fr',
-            plugins: ['interaction', 'dayGrid'],
-            defaultDate: '2019-08-12',
-            editable: true,
-            eventLimit: true, // allow "more" link when too many events
-            events: [
-                {
-                    title: 'All Day Event',
-                    start: '2019-08-01'
-                },
-                {
-                    groupId: 999,
-                    title: 'Repeating Event',
-                    start: '2019-08-09T16:00:00'
-                },
-                {
-                    groupId: 999,
-                    title: 'Repeating Event',
-                    start: '2019-08-16T16:00:00'
-                },
-                {
-                    title: 'Meeting',
-                    start: '2019-08-12T10:30:00',
-                    end: '2019-08-12T12:30:00'
-                },
-                {
-                    title: 'Lunch',
-                    start: '2019-08-12T12:00:00'
-                },
-                {
-                    title: 'Meeting',
-                    start: '2019-08-12T14:30:00'
-                },
-                {
-                    title: 'Happy Hour',
-                    start: '2019-08-12T17:30:00'
-                },
-                {
-                    title: 'Dinner',
-                    start: '2019-08-12T20:00:00'
-                },
-                {
-                    title: 'Birthday Party',
-                    start: '2019-08-13T07:00:00'
-                },
-                {
-                    title: 'Click for Google',
-                    url: 'http://google.com/',
-                    start: '2019-08-28'
-                }
-            ]
+
+        $.get('/member/calendar_events.json', function (events) {
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                locale: 'fr',
+                plugins: ['interaction', 'dayGrid'],
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events
+                events: events
+            })
+            calendar.render()
         })
 
-        calendar.render()
+
+
+
     }
 
 
