@@ -16,5 +16,6 @@
 //= require extlibs/fullcalendar_interaction
 //= require extlibs/fullcalendar_daygrid
 //= require extlibs/datatables
+//= require extlibs/select2.min
 //= require main
 
