@@ -15,6 +15,7 @@
  *= require fullcalendar_daygrid
  *= require datatables
  *= require select2.min
+ *= require flatpickr.min
  *= require shared
  *= require main
  */

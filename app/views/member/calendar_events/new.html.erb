@@ -1,6 +1,6 @@
 <%= form_for [:member, @calendar_event] do |f| %>
     <div>Nom : <%= f.text_field :name, class: "text-field" %></div>
-    <div>Date : <%= f.datetime_select :date %>
+    <div>Date : <%= f.text_field :date, class: "datepicker" %>
 
     <div><%= f.submit class:"button" %></div>
 

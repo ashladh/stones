@@ -17,7 +17,7 @@ module Member
     end
 
     def create
-      
+
       @calendar_event = CalendarEvent.new(calendar_event_params)
       @calendar_event.user = current_user
       @calendar_event.save!
@@ -27,7 +27,7 @@ module Member
     private
 
     def calendar_event_params
-      params[:calendar_event].permit(:name, :date)
+      p = params[:calendar_event].permit(:name, :date)
     end
 
   end

@@ -51,6 +51,7 @@ $(function () {
     initCalendar()
     initCharacterTable()
     initSpecSelect()
+    initDatePicker()
 
 
 
@@ -64,6 +65,7 @@ $(function () {
 
         $.get('/member/calendar_events.json', function (events) {
             var calendar = new FullCalendar.Calendar(calendarEl, {
+                timeZone: 'UTC',
                 locale: 'fr',
                 plugins: ['interaction', 'dayGrid'],
                 editable: true,
@@ -123,6 +125,14 @@ $(function () {
 
     function createSelectOption (value, label) {
         return $('<option>').attr({value: value}).text(label)
+    }
+
+    function  initDatePicker () {
+        flatpickr('.datepicker', {
+            enableTime: true,
+            dateFormat: 'd-m-Y H:i',
+            locale: 'fr'
+        })
     }
 
     $(document).ready(function() {

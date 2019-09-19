@@ -12,10 +12,14 @@
 //
 //= require rails-ujs
 //= require extlibs/jquery-3.4.1.min
+//= require extlibs/moment-with-locales
+//= require extlibs/moment-timezone
 //= require extlibs/fullcalendar
 //= require extlibs/fullcalendar_interaction
 //= require extlibs/fullcalendar_daygrid
 //= require extlibs/datatables
 //= require extlibs/select2.min
+//= require extlibs/flatpickr
+//= require extlibs/flatpickr.fr
 //= require main
 
