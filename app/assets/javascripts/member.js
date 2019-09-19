@@ -12,8 +12,9 @@
 //
 //= require rails-ujs
 //= require extlibs/jquery-3.4.1.min
-//= require extlibs/moment-with-locales
-//= require extlibs/moment-timezone
+//= require extlibs/popper.min
+//= require extlibs/tippy
+//= require extlibs/sweetalert2
 //= require extlibs/fullcalendar
 //= require extlibs/fullcalendar_interaction
 //= require extlibs/fullcalendar_daygrid

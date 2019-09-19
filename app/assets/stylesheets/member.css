@@ -11,11 +11,12 @@
  * It is generally better to create a new file per style scope.
  *
  *= require reset
- *= require fullcalendar
- *= require fullcalendar_daygrid
- *= require datatables
- *= require select2.min
- *= require flatpickr.min
+ *= require extlibs/sweetalert2
+ *= require extlibs/fullcalendar
+ *= require extlibs/fullcalendar_daygrid
+ *= require extlibs/datatables
+ *= require extlibs/select2.min
+ *= require extlibs/flatpickr.min
  *= require shared
  *= require main
  */
