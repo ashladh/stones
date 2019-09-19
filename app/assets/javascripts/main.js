@@ -49,6 +49,7 @@ $(function () {
 
 
     initCalendar()
+    initCharacterTable()
     initSpecSelect()
 
 
@@ -115,6 +116,13 @@ $(function () {
         })
 
         calendar.render()
+    }
+
+
+    function initCharacterTable () {
+        $('#characters').DataTable({
+            paging: false
+        })
     }
 
 

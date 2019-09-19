@@ -1,10 +1,27 @@
 <div><%= link_to "Nouveau personnage", new_member_character_path %></div>
-<div>
-  <% @characters.each do |character| %>
-    <div>
-      <span class="characterlist-name"><%= character.name %></span>
-      <%= link_to "Editer", edit_member_character_path(character), class: "button" %>
-      <%= link_to "Supprimer", member_character_path(character), class: "button", method: :delete %>
-    </div>
-  <% end %>
-</div>
+
+
+<table id="characters" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>-</th>
+            <th>Classe</th>
+            <th>Spécialisation</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @characters.each do |character| %>
+            <tr>
+                <td><span class="characterlist-name"><%= character.name %></span></td>
+                <td><%= character.level %></td>
+                <td><%= character.playable_class %></td>
+                <td><%= character.spec %></td>
+                <td><%= link_to "Editer", edit_member_character_path(character), class: "button" %></td>
+                <td><%= link_to "Supprimer", member_character_path(character), class: "button", method: :delete %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
