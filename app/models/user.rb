@@ -38,6 +38,9 @@ class User
 
   field :nickname
 
+  field :dkp, type: Integer, default: 0
+
   has_many :characters
+  has_many :histories
 
 end
