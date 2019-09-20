@@ -17,17 +17,36 @@ module Member
     end
 
     def create
-
       @calendar_event = CalendarEvent.new(calendar_event_params)
       @calendar_event.user = current_user
       @calendar_event.save!
       redirect_to member_calendar_path
     end
 
+    def show
+      @calendar_event = CalendarEvent.find(params[:id])
+    end
+
+    def edit
+      @calendar_event = CalendarEvent.find(params[:id])
+    end
+
+    def update
+      @calendar_event = CalendarEvent.find(params[:id])
+      @calendar_event.update(calendar_event_params)
+      redirect_to member_calendar_event_path
+    end
+
+    def destroy
+      @calendar_event = CalendarEvent.find(params[:id])
+      @calendar_event.destroy
+      redirect_to member_calendar_path
+    end
+
     private
 
     def calendar_event_params
-      p = params[:calendar_event].permit(:name, :date)
+      p = params[:calendar_event].permit(:name, :date, :description)
     end
 
   end

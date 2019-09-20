@@ -5,6 +5,7 @@ class CalendarEvent
 
   field :date, type: DateTime
   field :name, type: String, default: ""
+  field :description, type: String, default: ""
 
   belongs_to :user
   has_many :event_participations
@@ -13,7 +14,8 @@ class CalendarEvent
   def for_fullcalendar
     {
       title: name,
-      start: date
+      start: date,
+      url: Rails.application.routes.url_helpers.member_calendar_event_path(self)
     }
   end
 

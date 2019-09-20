@@ -70,7 +70,10 @@ $(function () {
                 plugins: ['interaction', 'dayGrid'],
                 editable: true,
                 eventLimit: true, // allow "more" link when too many events
-                events: events
+                events: events,
+                eventClick: function (info) {
+                    console.log(info)
+                }
             })
             calendar.render()
         })
@@ -130,7 +133,7 @@ $(function () {
     function  initDatePicker () {
         flatpickr('.datepicker', {
             enableTime: true,
-            dateFormat: 'd-m-Y H:i',
+            //dateFormat: 'd-m-Y H:i',
             locale: 'fr'
         })
     }

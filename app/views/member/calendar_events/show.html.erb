@@ -1,0 +1,7 @@
+<div><%= @calendar_event.name %></div>
+<div><%= l @calendar_event.date, format: :short %></div>
+<div><%= @calendar_event.description %></div>
+<div>Créé par <%= @calendar_event.user.nickname %></div>
+
+<%= link_to "Editer", edit_member_calendar_event_path(@calendar_event), class: "button" %>
+<%= link_to "Supprimer", member_calendar_event_path(@calendar_event), class: "button", method: :delete, confirm: "Confirmer la suppression" %>
