@@ -275,28 +275,207 @@ table.dataTable thead th, table.dataTable thead td {
     width: 24px;
 }
 
+.double-table-icon {
+    width: 52px;
+}
+
+.triple-table-icon {
+    width: 82px;
+}
+
 
 th, td {
     border-bottom: 1px solid rgba(255,255,255, .1)
 }
 
 .wow-icon {
+    display: inline-block;
     width: 24px;
     height: 24px;
     background-size: cover;
     border-radius: 12px;
     box-shadow: inset 0 0 0 1px rgba(44, 18, 21, 1);
 
+    &.druid {
+        background-image: image-url('icons/druid.png');
+    }
+
+    &.hunter {
+        background-image: image-url('icons/hunter.png');
+    }
+
+    &.mage {
+        background-image: image-url('icons/mage.png');
+    }
+
+    &.priest {
+        background-image: image-url('icons/priest.png');
+    }
+
+    &.rogue {
+        background-image: image-url('icons/rogue.png');
+    }
+
     &.shaman {
         background-image: image-url('icons/shaman.png');
     }
-    
+
+    &.warlock {
+        background-image: image-url('icons/warlock.png');
+    }
+
+    &.warrior {
+        background-image: image-url('icons/warrior.png');
+    }
+
+    &.druid-balance {
+        background-image: image-url('icons/druid_balance.jpg');
+    }
+
+    &.druid-feral {
+        background-image: image-url('icons/druid_feral.jpg');
+    }
+
+    &.druid-guardian {
+        background-image: image-url('icons/druid_feral.jpg');
+    }
+
+    &.druid-restoration {
+        background-image: image-url('icons/druid_restoration.jpg');
+    }
+
+    &.hunter-beastmastery {
+        background-image: image-url('icons/hunter_beastmastery.jpg');
+    }
+
+    &.hunter-marksmanship {
+        background-image: image-url('icons/hunter_marksmanship.jpg');
+    }
+
+    &.hunter-survival {
+        background-image: image-url('icons/hunter_survival.jpg');
+    }
+
+    &.mage-arcane {
+        background-image: image-url('icons/mage_arcane.jpg');
+    }
+
+    &.mage-fire {
+        background-image: image-url('icons/mage_fire.jpg');
+    }
+
+    &.mage-frost {
+        background-image: image-url('icons/mage_frost.jpg');
+    }
+
+    &.priest-discipline {
+        background-image: image-url('icons/priest_discipline.jpg');
+    }
+
+    &.priest-holy {
+        background-image: image-url('icons/priest_holy.jpg');
+    }
+
+    &.priest-shadow {
+        background-image: image-url('icons/priest_shadow.jpg');
+    }
+
+    &.rogue-assassination {
+        background-image: image-url('icons/rogue_assassination.jpg');
+    }
+
+    &.rogue-combat {
+        background-image: image-url('icons/rogue_combat.jpg');
+    }
+
+    &.rogue-subtlety {
+        background-image: image-url('icons/rogue_subtlety.jpg');
+    }
+
     &.shaman-enhancement {
         background-image: image-url('icons/shaman_enhancement.jpg');
     }
 
     &.shaman-elemental {
         background-image: image-url('icons/shaman_elemental.jpg');
+    }
+
+    &.shaman-restoration {
+        background-image: image-url('icons/shaman_restoration.jpg');
+    }
+
+    &.warlock-affliction {
+        background-image: image-url('icons/warlock_affliction.jpg');
+    }
+
+    &.warlock-demonology {
+        background-image: image-url('icons/warlock_demonology.jpg');
+    }
+
+    &.warlock-destruction {
+        background-image: image-url('icons/warlock_destruction.jpg');
+    }
+
+    &.warrior-arms {
+        background-image: image-url('icons/warrior_arms.jpg');
+    }
+
+    &.warrior-fury {
+        background-image: image-url('icons/warrior_fury.jpg');
+    }
+
+    &.warrior-protection {
+        background-image: image-url('icons/warrior_protection.jpg');
+    }
+
+
+
+    &.alchemy {
+        background-image: image-url('icons/trade_alchemy.jpg');
+    }
+
+    &.blacksmithing {
+        background-image: image-url('icons/trade_blacksmithing.jpg');
+    }
+
+    &.cooking {
+        background-image: image-url('icons/trade_cooking.jpg');
+    }
+
+    &.enchanting {
+        background-image: image-url('icons/trade_enchanting.jpg');
+    }
+
+    &.engineering {
+        background-image: image-url('icons/trade_engineering.jpg');
+    }
+
+    &.fishing {
+        background-image: image-url('icons/trade_fishing.jpg');
+    }
+
+    &.firstaid {
+        background-image: image-url('icons/trade_firstaid.jpg');
+    }
+
+    &.herbalism {
+        background-image: image-url('icons/trade_herbalism.jpg');
+    }
+
+    &.leatherworking {
+        background-image: image-url('icons/trade_leatherworking.jpg');
+    }
+
+    &.mining {
+        background-image: image-url('icons/trade_mining.jpg');
+    }
+
+    &.skinning {
+        background-image: image-url('icons/trade_skinning.jpg');
+    }
+
+    &.tailoring {
+        background-image: image-url('icons/trade_tailoring.jpg');
     }
 
 
