@@ -11,20 +11,18 @@
             <th>Métiers principaux</th>
             <th>Métiers secondaires</th>
             <th></th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
         <% @characters.each do |character| %>
             <tr>
-                <td><span class="characterlist-name"><%= character.name %></span></td>
+                <td><%= character.name %></td>
                 <td><%= character.level %></td>
                 <td><%= character.playable_class %></td>
                 <td><%= character.spec %></td>
                 <td><%= character.primary_professions.join(', ') %></td>
                 <td><%= character.secondary_professions.join(', ') %></td>
-                <td><%= link_to "Editer", edit_member_character_path(character), class: "button" %></td>
-                <td><%= link_to "Supprimer", member_character_path(character), class: "button", method: :delete %></td>
+                <td><%= link_to "Edit", edit_member_character_path(character), class: "button" %></td>
             </tr>
         <% end %>
     </tbody>
