@@ -36,6 +36,7 @@ a {
 
 #nav ul {
     list-style: none;
+    margin-bottom: 0;
 }
 
 #nav ul li {
@@ -67,6 +68,6 @@ a {
     color: #ecdcdc;
     border-bottom-right-radius: 0.25em;
     border-bottom-left-radius: 0.25em;
-    padding: 2em;
+    padding: 20px;
     box-sizing: border-box;
 }

@@ -1,3 +1,27 @@
+.button, button, input[type='button'], input[type='reset'], input[type='submit'] {
+    height: auto;
+    background-color: #712020;
+    border: 0.1rem solid #712020;
+    padding: 6px 18px;
+    line-height: 1.6;
+}
+
+
+h1 {
+    text-align: center;
+    display: block;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    font-weight: 200;
+    padding: 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: -20px;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+
 #wrapper {
     margin: 0 auto;
 }
@@ -35,11 +59,100 @@
     border-color: rgb(206, 97, 42);
 }
 
-.text-field {
+
+.form {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    min-height: 54px;
+}
+
+
+input.text-field, select.select, textarea {
     padding: .5em;
-    margin: 1em 0 0 0;
+    border-radius: 5px;
+    background-color: rgba(126, 21, 21, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+select.select option {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.form-group textarea {
+    min-height: 160px;
+}
+
+
+.professions-select {
+    width: 300px;
+}
+
+
+.text-area {
+    width: 300px;
+    height: 100px;
     border-radius: 5px;
 }
+
+.form-group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.form-group label {
+    float: left;
+    width: 220px;
+    display: block;
+    padding-top: 7px;
+    padding-right: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+}
+
+.form-group input, .form-group select {
+    float: left;
+    width: calc(100% - 220px);
+}
+
+.form-actions {
+    padding-left: 220px;
+}
+
+.select2-search {
+    margin: 0;
+}
+
+input.select2-search__field {
+    height: 14px;
+}
+
+.select2-selection__choice {
+    margin-bottom: 0;
+}
+
+.select2-container--default .select2-selection--multiple {
+    background-color: rgba(126, 21, 21, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+.select2-selection {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input[type="checkbox"] {
+    width: auto;
+    margin-top: 14px;
+    display: block;
+}
+
 
 .button {
     border-radius: 5px;
@@ -47,10 +160,6 @@
     margin: 1em 0 1em 0;
 }
 
-.select {
-    margin: 1em 0 0 0;
-    border-radius: 5px;
-}
 
 .userlist-nickname, .characterlist-name {
     padding: .5em;
@@ -101,16 +210,4 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 
 .select2-container--default .select2-selection--multiple .select2-selection__rendered li {
     color: black;
-}
-
-.professions-select {
-    width: 300px;
-}
-
-
-
-.text-area {
-    width: 300px;
-    height: 100px;
-    border-radius: 5px;
 }

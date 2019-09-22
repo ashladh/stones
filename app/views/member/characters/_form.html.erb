@@ -1,26 +1,53 @@
-<%= form_for [:member, character] do |f| %>
-    <div>Nom : <%= f.text_field :name, class: "text-field" %></div>
+<%= form_for [:member, character], html: {class: "form"} do |f| %>
 
-    <div class="character-class">Classe : <%= f.select :playable_class, options_for_select(playable_class_labels, character.playable_class), {include_blank: true}, {class: "select"} %></div>
+    <div class="form-group">
+        <%= f.label :name, "Nom :" %>
+        <%= f.text_field :name, class: "text-field" %>
+    </div>
 
-    <div class="character-spec" data-spec="<%= character.spec %>"><%= f.select :spec, options_for_select({}), {}, {class: "select"} %></div>
+    <div class="form-group character-class">
+        <%= f.label :playable_class, "Classe :" %>
+        <%= f.select :playable_class, options_for_select(playable_class_labels, character.playable_class), {include_blank: true}, {class: "select"} %>
+    </div>
 
-    <div>Niveau : <%= f.number_field :level, class: "text-field"%></div>
 
-    <div class="professions-container">Métiers principaux :
+    <div class="form-group character-spec" data-spec="<%= character.spec %>">
+        <%= f.label :spec, "Spécialisation :" %>
+        <%= f.select :spec, options_for_select({}), {}, {class: "select"} %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :level, "Niveau :" %>
+        <%= f.number_field :level, class: "text-field"%>
+    </div>
+
+    <div class="form-group professions-container">
+        <%= f.label :primary_professions, "Métiers principaux :" %>
         <%= f.select :primary_professions, options_for_select(primary_professions_labels, character.primary_professions), {}, {multiple: true, class: "professions-select"} %>
     </div>
 
-    <div class="professions-container">Métiers secondaires :
+    <div class="form-group professions-container">
+        <%= f.label :secondary_professions, "Métiers secondaires :" %>
         <%= f.select :secondary_professions, options_for_select(secondary_professions_labels, character.secondary_professions), {}, {multiple: true, class: "professions-select"} %>
     </div>
 
-    <div class="checkbox-container">Personnage principal : <%= f.check_box(:main) %>
+    <div class="form-group checkbox-container">
+        <%= f.label :main, "Personnage principal :" %>
+        <%= f.check_box(:main) %>
+    </div>
 
-    <div class="checkbox-container">Maître de classe : <%= f.check_box(:class_master) %>
+    <div class="form-group checkbox-container">
+        <%= f.label :class_master, "Maître de classe :" %>
+        <%= f.check_box(:class_master) %>
+    </div>
 
-    <div class="officer-note">Note d'officier : <%= f.text_field :officer_note %>
+    <div class="form-group officer-note">
+        <%= f.label :officer_note, "Notes des officiers :" %>
+        <%= f.text_area :officer_note %>
+    </div>
 
-    <div><%= f.submit class:"button" %></div>
+    <div class="form-actions">
+        <%= f.submit class:"button" %>
+    </div>
 
 <% end %>
