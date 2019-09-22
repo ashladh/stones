@@ -74,8 +74,9 @@
 }
 
 .section p {
-    padding: .3em;
+    margin-bottom: 0;
 }
+
 
 #intro img {
     float: right;

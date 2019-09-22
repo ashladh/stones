@@ -6,23 +6,21 @@
         <tr>
             <th>Nom</th>
             <th>-</th>
-            <th>Classe</th>
-            <th>Spécialisation</th>
-            <th>Métiers principaux</th>
-            <th>Métiers secondaires</th>
-            <th></th>
+            <th>-</th>
+            <th>-</th>
+            <th>Métiers</th>
+            <th>Secondaires</th>
         </tr>
     </thead>
     <tbody>
         <% @characters.each do |character| %>
             <tr>
-                <td><%= character.name %></td>
-                <td><%= character.level %></td>
-                <td><%= character.playable_class %></td>
-                <td><%= character.spec %></td>
+                <td><%= link_to character.name, edit_member_character_path(character) %></td>
+                <td class="table-icon"><%= character.level %></td>
+                <td class="table-icon"><div class="wow-icon <%= character.playable_class %>"></div></td>
+                <td class="table-icon"><div class="wow-icon <%= character.playable_class %>-<%= character.spec %>"></div></td>
                 <td><%= character.primary_professions.join(', ') %></td>
                 <td><%= character.secondary_professions.join(', ') %></td>
-                <td><%= link_to "Edit", edit_member_character_path(character), class: "button" %></td>
             </tr>
         <% end %>
     </tbody>

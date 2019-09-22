@@ -16,6 +16,14 @@ body {
     width: 200px;
 }
 
+#nav ul li {
+    display: block;
+}
+
+#nav ul li a {
+    padding: 0;
+}
+
 #container {
     position: absolute;
     background: rgba(51, 0, 0, .95);
@@ -198,6 +206,10 @@ input.select2-search__field {
 }
 
 
+table.dataTable {
+    font-size: 0.9em;
+}
+
 table.dataTable tbody tr {
     background-color: transparent;
 }
@@ -240,4 +252,35 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 
 .flatpickr-input {
     color: white;
+}
+
+.table-icon {
+    width: 24px;
+}
+
+
+th, td {
+    border-bottom: 0.1rem solid #0a0a0a;
+}
+
+.wow-icon {
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: inset 0 0 0 2px rgba(52, 1, 2, 1);
+
+    &.shaman {
+        background-image: image-url('icons/shaman.png');
+    }
+    
+    &.shaman-enhancement {
+        background-image: image-url('icons/shaman_enhancement.jpg');
+    }
+
+    &.shaman-elemental {
+        background-image: image-url('icons/shaman_elemental.jpg');
+    }
+
+
 }
