@@ -482,15 +482,58 @@ th, td {
 }
 
 .character-card {
+    position: relative;
     display: block;
     float: left;
-    width: calc(50% - 20px);
-    height: 105px;
-    background: rgba(126, 21, 21, 0.3);
+    width: calc(50% - 10px);
+    height: 135px;
     border-radius: 10px;
     margin: 10px;
-    padding: 10px;
-    overflow: hidden;
+    margin-left: 0;
+}
+
+.character-card-crest {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    &.druid {
+        background-image: image-url('icons/crest_druid_crop.png');
+    }
+    &.hunter {
+        background-image: image-url('icons/crest_hunter_crop.png');
+    }
+    &.mage {
+        background-image: image-url('icons/crest_mage_crop.png');
+    }
+    &.priest {
+        background-image: image-url('icons/crest_priest_crop.png');
+    }
+    &.rogue {
+        background-image: image-url('icons/crest_rogue_crop.png');
+    }
+    &.shaman {
+        background-image: image-url('icons/crest_shaman_crop.png');
+    }
+    &.warlock {
+        background-image: image-url('icons/crest_warlock_crop.png');
+    }
+    &.warrior {
+        background-image: image-url('icons/crest_warrior_crop.png');
+    }
+}
+
+.character-card-info {
+    position: absolute;
+    background: rgba(126, 21, 21, 0.3);
+    border-radius: 15px;
+    padding-left: 75px;
+    padding-top: 10px;
+    top: 30px;
+    right: 0;
+    left: 70px;
+    bottom: 15px;
 }
 
 .character-card-name {
@@ -505,4 +548,10 @@ th, td {
     border-radius: 50%;
     text-align: center;
     line-height: 40px;
+    margin-top: -5px;
+    margin-right: -5px;
+}
+
+.character-card-class {
+    font-size: .8em;
 }
