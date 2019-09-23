@@ -6,6 +6,10 @@ module Member
 
     def calendar
     end
+
+    def roster
+      @characters = Character.all
+    end
   end
 
 end
