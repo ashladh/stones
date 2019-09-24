@@ -86,7 +86,16 @@ $(function () {
 
     function initCharacterTable () {
         $('#characters').DataTable({
-            paging: false
+            paging: false,
+            searching: false,
+            info: false,
+            columns: [
+                null,
+                null,
+                null,
+                {orderable: false},
+                {orderable: false}
+            ]
         })
     }
 
