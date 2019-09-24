@@ -288,6 +288,12 @@ th, td {
     border-bottom: 1px solid rgba(255,255,255, .1)
 }
 
+.character-show-professions .wow-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
 .wow-icon {
     display: inline-block;
     width: 24px;
@@ -555,3 +561,87 @@ th, td {
 .character-card-class {
     font-size: .8em;
 }
+
+.character-show-name {
+    font-size: 2em;
+    text-align: center;
+
+    &.druid {
+        color: #FF7D0A;
+    }
+    &.hunter {
+        color: #ABD473;
+    }
+    &.mage {
+        color: #69CCF0;
+    }
+    &.priest {
+        color: #FFFFFF;
+    }
+    &.rogue {
+        color: #FFF569;
+    }
+    &.shaman {
+        color: #0070DE;
+    }
+    &.warlock {
+        color: #9482C9;
+    }
+    &.warrior {
+        color: #C79C6E;
+    }
+}
+
+.character-show-crest {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 250px;
+    margin-left: 250px;
+
+    &.druid {
+        background-image: image-url('icons/crest_druid.png');
+    }
+    &.hunter {
+        background-image: image-url('icons/crest_hunter.png');
+    }
+    &.mage {
+        background-image: image-url('icons/crest_mage.png');
+    }
+    &.priest {
+        background-image: image-url('icons/crest_priest.png');
+    }
+    &.rogue {
+        background-image: image-url('icons/crest_rogue.png');
+    }
+    &.shaman {
+        background-image: image-url('icons/crest_shaman.png');
+    }
+    &.warlock {
+        background-image: image-url('icons/crest_warlock.png');
+    }
+    &.warrior {
+        background-image: image-url('icons/crest_warrior.png');
+    }
+}
+
+.character-show-class {
+    text-align: center;
+    font-size: 1.25em;
+}
+
+.character-show-professions {
+    text-align: center;
+}
+
+.character-show-level {
+    width: 40px;
+    height: 40px;
+    background: #712020;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin: auto;
+}
+
+
+

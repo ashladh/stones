@@ -1,0 +1,15 @@
+<div class="character-show-name <%= @character.playable_class %>"><%= @character.name %></div>
+<div class="character-show-level"><%= @character.level %></div>
+<div class="character-show-crest <%= @character.playable_class %>"></div>
+
+<div class="character-show-class"><%= @character.playable_class %> <%= @character.spec %></div>
+<div class="character-show-professions">
+    <% @character.primary_professions.each do |profession| %>
+        <div class="wow-icon <%= profession %>"></div>
+    <% end %>
+
+    <% @character.secondary_professions.each do |profession| %>
+        <div class="wow-icon <%= profession %>"></div>
+    <% end %>
+</div>
+

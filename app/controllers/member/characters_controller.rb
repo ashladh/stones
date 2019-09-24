@@ -33,6 +33,10 @@ module Member
       redirect_to member_characters_path
     end
 
+    def show
+      @character = Character.find(params[:id])
+    end
+
     private
 
     def character_params
