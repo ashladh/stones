@@ -34,4 +34,12 @@ module ApplicationHelper
             "Secourisme": "firstaid"
         }
     end
+
+    def presence_labels
+        {
+            "Accepté": "accepted",
+            "Incertain": "tentative",
+            "Absent": "absent"
+        }
+    end
 end

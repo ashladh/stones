@@ -25,6 +25,11 @@ module Member
 
     def show
       @calendar_event = CalendarEvent.find(params[:id])
+      character_ids = current_user.characters.map(&:id)
+      @event_participation = @calendar_event.event_participations.in(character_id: character_ids).first
+      if @event_participation.nil?
+        @event_participation = @calendar_event.event_participations.new
+      end
     end
 
     def edit
@@ -46,7 +51,7 @@ module Member
     private
 
     def calendar_event_params
-      p = params[:calendar_event].permit(:name, :date, :description)
+      params[:calendar_event].permit(:name, :date, :description)
     end
 
   end

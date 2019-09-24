@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :users
     resources :characters
     resources :calendar_events
+    resources :event_participations
   end
 
   root to: 'pages#index'

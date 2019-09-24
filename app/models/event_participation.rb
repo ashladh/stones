@@ -7,6 +7,6 @@ class EventParticipation
   field :presence, type: String, default: 'invited'
   field :confirmed, type: Boolean, default: false
 
-  validates_uniqueness_of :calendar_event_id, scope: [:calendar_event_id]
+  validates_uniqueness_of :character_id, scope: [:calendar_event_id]
 
 end

@@ -3,5 +3,23 @@
 <div><%= @calendar_event.description %></div>
 <div>Créé par <%= @calendar_event.user.nickname %></div>
 
+<% character = current_user.characters.first %>
+
+<%= form_for [:member, @event_participation] do |f| %>
+    <%= f.hidden_field :calendar_event_id %>
+    <%= f.select :character_id, options_from_collection_for_select(current_user.characters.all, :id, :name, @event_participation.character_id), {}, {class: "select"} %>
+    <%= f.select :presence, options_for_select(presence_labels, @event_participation.presence), {}, {class: "select"}%>
+    <%= f.submit %>
+<% end %>
+
+<ul>
+    <% @calendar_event.event_participations.select(&:persisted?).each do |event_participation| %>
+        <li>
+            <%= event_participation.character.name %> -
+            <%= event_participation.presence %>
+        </li>
+    <% end %>
+</ul>
+
 <%= link_to "Editer", edit_member_calendar_event_path(@calendar_event), class: "button" %>
 <%= link_to "Supprimer", member_calendar_event_path(@calendar_event), class: "button", method: :delete, confirm: "Confirmer la suppression" %>
