@@ -18,6 +18,7 @@
  *= require extlibs/datatables
  *= require extlibs/select2.min
  *= require extlibs/flatpickr.min
+ *= require extlibs/flatpickr.dark
  *= require shared
  *= require main
  */
