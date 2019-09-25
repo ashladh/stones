@@ -64,23 +64,44 @@ $(function () {
 
 
         $.get('/member/calendar_events.json', function (events) {
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                timeZone: 'UTC',
-                locale: 'fr',
-                plugins: ['interaction', 'dayGrid'],
-                editable: true,
-                eventLimit: true, // allow "more" link when too many events
-                events: events,
-                eventClick: function (info) {
-                    console.log(info)
-                }
-            })
-            calendar.render()
+            initFullCalendar(calendarEl, events)
         })
+    }
+
+
+    function initFullCalendar (calendarEl, events) {
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            timeZone: 'UTC',
+            locale: 'fr',
+            plugins: ['interaction', 'dayGrid'],
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            events: events,
+            eventClick (info) {
+                console.log(info)
+            },
+            eventRender: initTippyForCalendarEvent
+        })
+        calendar.render()
+    }
 
 
 
-
+    function initTippyForCalendarEvent ({el, event}) {
+        tippy(el, {
+            theme: 'dark',
+            interactive: true,
+            content: 'Loading...',
+            animateFill: false,
+            animation: 'fade',
+            flipOnUpdate: true,
+            maxWidth: 600,
+            onShow (instance) {
+                $.get('/member/calendar_events/' + event.id + '/preview', function (html) {
+                    instance.setContent(html)
+                })
+            }
+        })
     }
 
 
@@ -142,12 +163,11 @@ $(function () {
     function  initDatePicker () {
         flatpickr('.datepicker', {
             enableTime: true,
-            //dateFormat: 'd-m-Y H:i',
             locale: 'fr'
         })
     }
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('.professions-select').select2()
     })
 

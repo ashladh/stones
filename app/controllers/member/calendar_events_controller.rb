@@ -2,6 +2,9 @@ module Member
 
   class CalendarEventsController < MemberController
 
+    before_action :get_calendar_event, only: [:edit, :update, :destroy, :show, :preview]
+
+
     def index
       @calendar_events = CalendarEvent.all
 
@@ -12,9 +15,11 @@ module Member
       end
     end
 
+
     def new
       @calendar_event = CalendarEvent.new
     end
+
 
     def create
       @calendar_event = CalendarEvent.new(calendar_event_params)
@@ -23,36 +28,47 @@ module Member
       redirect_to member_calendar_path
     end
 
+
     def show
-      @calendar_event = CalendarEvent.find(params[:id])
-      character_ids = current_user.characters.map(&:id)
-      @event_participation = @calendar_event.event_participations.in(character_id: character_ids).first
-      if @event_participation.nil?
-        @event_participation = @calendar_event.event_participations.new
-      end
+      @event_participation = @calendar_event.user_participation(current_user)
     end
+
+
+    def preview
+      @event_participation = @calendar_event.user_participation(current_user)
+
+      render layout: false
+    end
+
 
     def edit
-      @calendar_event = CalendarEvent.find(params[:id])
     end
 
+
     def update
-      @calendar_event = CalendarEvent.find(params[:id])
       @calendar_event.update(calendar_event_params)
       redirect_to member_calendar_event_path
     end
 
+
     def destroy
-      @calendar_event = CalendarEvent.find(params[:id])
       @calendar_event.destroy
       redirect_to member_calendar_path
     end
 
+
     private
+
+
+    def get_calendar_event
+      @calendar_event = CalendarEvent.find(params[:id])
+    end
+
 
     def calendar_event_params
       params[:calendar_event].permit(:name, :date, :description)
     end
+
 
   end
   
