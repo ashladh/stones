@@ -14,10 +14,23 @@ class CalendarEvent
 
   def for_fullcalendar
     {
+      id: _id.to_s,
       title: name,
       start: date,
       url: Rails.application.routes.url_helpers.member_calendar_event_path(self)
     }
+  end
+
+
+  def user_participation user
+    character_ids = user.characters.map(&:id)
+    event_participation = event_participations.in(character_id: character_ids).first
+
+    if event_participation.nil?
+      event_participation = event_participations.new
+    end
+
+    event_participation
   end
 
 end

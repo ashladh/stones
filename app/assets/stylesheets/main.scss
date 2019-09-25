@@ -655,4 +655,12 @@ th, td {
 }
 
 
+body .tippy-tooltip {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+}
 
+.calendar-event-preview-container {
+    text-align: left;
+    font-size: 14px;
+}

@@ -4,11 +4,15 @@ Rails.application.routes.draw do
 
   namespace :member do
     get "/", to: "pages#dashboard"
-    get "/calendar", to: "pages#calendar"
-    get "/roster", to: "pages#roster"
+    get :calendar, to: "pages#calendar"
+    get :roster, to: "pages#roster"
+
     resources :users
     resources :characters
-    resources :calendar_events
+    resources :calendar_events do
+      get :preview, on: :member
+    end
+
     resources :event_participations
   end
 
