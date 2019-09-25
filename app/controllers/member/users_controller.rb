@@ -2,22 +2,21 @@ module Member
 
   class UsersController < MemberController
 
+    before_action :get_user, only: [:edit, :update, :destroy]
+
     def index
       @users = User.all
     end
 
     def edit
-      @user = User.find(params[:id])
     end
 
     def update
-      @user = User.find(params[:id])
       @user.update(user_params)
       redirect_to member_users_path
     end
 
     def destroy
-      @user = User.find(params[:id])
       @user.destroy
       redirect_to member_users_path
     end
@@ -26,6 +25,10 @@ module Member
 
     def user_params
       params[:user].permit(:email, :nickname, :rank)
+    end
+
+    def get_user
+      @user = User.find(params[:id])
     end
 
   end

@@ -17,7 +17,7 @@ module Member
     private
 
     def event_participation_params
-      params[:event_participation].permit(:calendar_event_id, :character_id, :presence)
+      params[:event_participation].permit(:calendar_event_id, :character_id, :presence, :status)
     end
 
   end
