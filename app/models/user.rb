@@ -26,4 +26,20 @@ class User
   has_many :histories
   has_many :calendar_events
 
+  def registered?
+    rank == 'registered' || member?
+  end
+
+  def member?
+    rank == 'member' || officer?
+  end
+
+  def officer?
+    rank == 'officer' || guild_master?
+  end
+
+  def guild_master?
+    rank == 'guild_master'
+  end
+
 end
