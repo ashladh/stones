@@ -42,4 +42,15 @@ module ApplicationHelper
             "Absent": "absent"
         }
     end
+
+    def rank_labels user
+        labels = {
+            "Enregistré": "registered",
+            "Membre": "member"
+        }
+        if user.guild_master?
+            labels["Officier"] = "officer"
+        end
+        labels
+    end
 end

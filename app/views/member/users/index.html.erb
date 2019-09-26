@@ -1,8 +1,12 @@
 <h1>Membres</h1>
 <% @users.each do |user| %>
-  <span class="userlist-nickname"><%= user.nickname %></span>
-  <span class="userlist-rank"><%= user.rank %></span>
-  <span class="userlist-email"><%= user.email %></span>
-  <%= link_to "Editer", edit_member_user_path(user), class: "button" %>
-  <%= link_to "Supprimer", member_user_path(user), class: "button", method: :delete, confirm: "Confirmer la suppression" %>
+  <div>
+    <span class="userlist-nickname"><%= link_to user.nickname, member_user_path(user.id) %></span>
+    <span class="userlist-rank"><%= user.rank %></span>
+    <span class="userlist-email"><%= user.email %></span>
+    <% if user == current_user || current_user.officer? %>
+      <%= link_to "Editer", edit_member_user_path(user), class: "button" %>
+      <%= link_to "Supprimer", member_user_path(user), class: "button", method: :delete %>
+    <% end %>
+  </div>
 <% end %>

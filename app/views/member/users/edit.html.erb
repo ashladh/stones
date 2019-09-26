@@ -2,12 +2,9 @@
 
     <div>Email : <%= f.text_field :email, class: "text-field" %></div>
     <div>Pseudo : <%= f.text_field :nickname, class: "text-field" %></div>
-    <div>Rang : <%= f.select :rank, options_for_select({
-        "Enregistré": "registered",
-        "Membre": "member",
-        "Officier": "officer",
-        "GuildMaster": "gm"
-    }, @user.rank), {}, {class: "select"} %></div>
+    <% if @user != current_user && current_user.officer? %>
+        <div>Rang : <%= f.select :rank, options_for_select(rank_labels(current_user), @user.rank), {}, {class: "select"} %></div>
+    <% end %>
     <div><%= f.submit class:"button" %></div>
 
 <% end %>
