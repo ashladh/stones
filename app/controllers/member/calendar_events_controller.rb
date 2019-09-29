@@ -3,6 +3,7 @@ module Member
   class CalendarEventsController < MemberController
 
     before_action :get_calendar_event, only: [:edit, :update, :destroy, :show, :preview]
+    before_action :check_permissions, only: [:new, :create, :edit, :update, :destroy]
 
 
     def index
@@ -67,6 +68,14 @@ module Member
 
     def calendar_event_params
       params[:calendar_event].permit(:name, :date, :description)
+    end
+
+
+    def check_permissions
+      unless current_user.officer?
+        redirect_to member_calendar_path
+        return
+      end
     end
 
 

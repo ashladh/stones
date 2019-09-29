@@ -18,12 +18,17 @@
             <%= event_participation.character.name %> -
             <%= event_participation.presence %>
             <%= event_participation.status %>
-            <%= link_to("Confirmé", member_event_participation_path(event_participation, event_participation: {status: 'confirmed'}), method: :put) unless event_participation.status == 'confirmed' %>
-            <%= link_to("En attente", member_event_participation_path(event_participation, event_participation: {status: 'stand_by'}), method: :put) unless event_participation.status == 'stand_by' %>
-            <%= link_to("Refusé", member_event_participation_path(event_participation, event_participation: {status: 'refused'}), method: :put) unless event_participation.status == 'refused' %>
+
+            <% if current_user.officer? %>
+                <%= link_to("Confirmé", member_event_participation_path(event_participation, event_participation: {status: 'confirmed'}), method: :put) unless event_participation.status == 'confirmed' %>
+                <%= link_to("En attente", member_event_participation_path(event_participation, event_participation: {status: 'stand_by'}), method: :put) unless event_participation.status == 'stand_by' %>
+                <%= link_to("Refusé", member_event_participation_path(event_participation, event_participation: {status: 'refused'}), method: :put) unless event_participation.status == 'refused' %>
+            <% end %>
         </li>
     <% end %>
 </ul>
 
-<%= link_to "Editer", edit_member_calendar_event_path(@calendar_event), class: "button" %>
-<%= link_to "Supprimer", member_calendar_event_path(@calendar_event), class: "button", method: :delete, confirm: "Confirmer la suppression" %>
+<% if current_user.officer? %>
+    <%= link_to "Editer", edit_member_calendar_event_path(@calendar_event), class: "button" %>
+    <%= link_to "Supprimer", member_calendar_event_path(@calendar_event), class: "button", method: :delete, confirm: "Confirmer la suppression" %>
+<% end %>
