@@ -1,0 +1,9 @@
+<%= link_to member_character_path(character), class: "character-card" do %>
+    <div class="character-card-info">
+        <div class="character-card-level"><%= character.level %></div>
+        <div class="character-card-name"><%= character.name %></div>
+        <span class="character-card-class"><%= character.playable_class %></span>
+        <span class="character-card-class"><%= character.spec %></span>
+    </div>
+    <div class="character-card-crest <%= character.playable_class %>"></div>
+<% end %>
