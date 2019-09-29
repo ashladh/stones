@@ -6,7 +6,7 @@ class CalendarEvent
   field :date, type: DateTime
   field :name, type: String, default: ""
   field :description, type: String, default: ""
-  field :type, type: String, default: "raid"
+  field :raid, type: String, default: ""
 
   belongs_to :user
   has_many :event_participations

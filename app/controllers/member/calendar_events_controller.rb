@@ -19,6 +19,9 @@ module Member
 
     def new
       @calendar_event = CalendarEvent.new
+      if params[:date]
+        @calendar_event.date = params[:date].to_datetime + 21.hours
+      end
     end
 
 
@@ -67,7 +70,7 @@ module Member
 
 
     def calendar_event_params
-      params[:calendar_event].permit(:name, :date, :description)
+      params[:calendar_event].permit(:name, :date, :description, :raid)
     end
 
 

@@ -77,8 +77,8 @@ $(function () {
             editable: true,
             eventLimit: true, // allow "more" link when too many events
             events: events,
-            eventClick (info) {
-                console.log(info)
+            dateClick (info) {
+                window.location.replace('/member/calendar_events/new?date=' + info.dateStr)
             },
             eventRender: initTippyForCalendarEvent
         })

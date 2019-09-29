@@ -53,4 +53,12 @@ module ApplicationHelper
         end
         labels
     end
+
+    def raid_labels
+        {
+            "Molten Core": "molten_core",
+            "Onyxia's Lair": "onyxia"
+        }
+    end
+
 end
