@@ -1,3 +1,8 @@
-bite
-<%= @user.nickname %>
-<%= link_to "Editer", edit_member_user_path(@user.id) %>
+<h1><%= @user.nickname %></h1>
+
+<% if @user == current_user || current_user.officer? %>
+    <%= link_to "Editer", edit_member_user_path(@user.id), class: "button" %>
+<% end %>
+
+<h2>Personnages</h2>
+<%= render current_user.characters %>
