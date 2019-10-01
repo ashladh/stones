@@ -1,21 +1,21 @@
 <div class="calendar-event-preview-container <%= @calendar_event.raid %>">
 
-    <div><%= @calendar_event.name %></div>
-    <div><%= l @calendar_event.date, format: :short %></div>
+    <div class="calendar-event-name"><%= @calendar_event.name %></div>
+    <div class="calendar-event-date"><%= l @calendar_event.date, format: :short %></div>
     <div><%= @calendar_event.description %></div>
-    <div>Créé par <%= @calendar_event.user.nickname %></div>
+    <div class="calendar-event-owner">Créé par <%= @calendar_event.user.nickname %></div>
 
     <div class="participants">
-        Participants
+        <h2>Participants</h2>
         <ul>
             <% @calendar_event.event_participations.select(&:persisted?).each do |event_participation| %>
                 <li>
                     <%= event_participation.character.name %> -
                     <%= event_participation.presence %>
                     <%= event_participation.status %>
-                    <%= link_to("Confirmé", member_event_participation_path(event_participation, event_participation: {status: 'confirmed'}), method: :put) unless event_participation.status == 'confirmed' %>
-                    <%= link_to("En attente", member_event_participation_path(event_participation, event_participation: {status: 'stand_by'}), method: :put) unless event_participation.status == 'stand_by' %>
-                    <%= link_to("Refusé", member_event_participation_path(event_participation, event_participation: {status: 'refused'}), method: :put) unless event_participation.status == 'refused' %>
+                    <%= link_to("Confirmé", member_event_participation_path(event_participation, event_participation: {status: 'confirmed'}), method: :put, class: "button") unless event_participation.status == 'confirmed' %>
+                    <%= link_to("En attente", member_event_participation_path(event_participation, event_participation: {status: 'stand_by'}), method: :put, class: "button") unless event_participation.status == 'stand_by' %>
+                    <%= link_to("Refusé", member_event_participation_path(event_participation, event_participation: {status: 'refused'}), method: :put, class: "button") unless event_participation.status == 'refused' %>
                 </li>
             <% end %>
         </ul>
