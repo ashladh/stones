@@ -2,6 +2,10 @@
 
 <h2>Vos personnages</h2>
 
+<% if current_user.has_character? %>
+    Vous n'avez pas encore de personnage ! Créez en un pour pouvoir participer
+<% end %>
+
 <div>
     <%= link_to "Nouveau personnage", new_member_character_path, class: "button" %>
 </div>

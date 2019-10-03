@@ -42,4 +42,12 @@ class User
     rank == 'guild_master'
   end
 
+  def main_character
+    characters.where(main: true).first
+  end
+
+  def has_character?
+    characters.count == 0
+  end
+
 end

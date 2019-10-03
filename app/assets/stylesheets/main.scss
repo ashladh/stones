@@ -102,6 +102,10 @@ h1 {
     width: 300px;
 }
 
+.main-character {
+    box-shadow: 0 0 10px 10px rgba(255, 151, 0, 0.6);
+}
+
 
 .userlist-nickname, .characterlist-name {
     padding: .5em;
@@ -505,7 +509,10 @@ th, td {
     background-size: contain;
     background-repeat: no-repeat;
     height: 250px;
-    margin-left: 250px;
+    width: 250px;
+    position: relative;
+    margin: 0 auto;
+    background-position: center center;
 
     &.druid {
         background-image: image-url('icons/crest_druid.png');
@@ -534,8 +541,17 @@ th, td {
 }
 
 .character-show-class {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: black;
+    border-radius: 50%;
+    left: 20px;
     text-align: center;
-    font-size: 1.25em;
+    padding-top: 9px;
+    color: white;
+    top: 115px;
+    box-shadow: 0 0 10px black;
 }
 
 .character-show-professions {
@@ -543,13 +559,43 @@ th, td {
 }
 
 .character-show-level {
+    position: absolute;
     width: 40px;
     height: 40px;
     background: #712020;
     border-radius: 50%;
+    right: 20px;
     text-align: center;
-    line-height: 40px;
-    margin: auto;
+    padding-top: 8px;
+    color: black;
+    top: 115px;
+    box-shadow: 0 0 10px #712020;
+    text-shadow: 0 0 5px white;
+
+    &.druid {
+        background-color: #FF7D0A;
+    }
+    &.hunter {
+        background-color: #ABD473;
+    }
+    &.mage {
+        background-color: #69CCF0;
+    }
+    &.priest {
+        background-color: #FFFFFF;
+    }
+    &.rogue {
+        background-color: #FFF569;
+    }
+    &.shaman {
+        background-color: #0070DE;
+    }
+    &.warlock {
+        background-color: #9482C9;
+    }
+    &.warrior {
+        background-color: #C79C6E;
+    }
 }
 
 
@@ -557,6 +603,9 @@ body .tippy-tooltip {
     background: rgba(0, 0, 0, 0.8);
     border-radius: 5px;
 }
+
+
+
 
 .calendar-event-preview-container {
     text-align: left;
@@ -602,6 +651,11 @@ body .tippy-tooltip {
         border-radius: 3px;
         margin: 5px;
     }
+
+}
+
+
+.calendar-event-info {
 
 }
 

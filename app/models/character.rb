@@ -16,15 +16,25 @@ class Character
   has_many :event_participations
 
   before_save :sanitize_professions
+  before_create :ensure_main
   before_save :ensure_main_uniqueness
 
 
   private
 
+
   def sanitize_professions
     self.primary_professions = primary_professions.select{|p| !p.blank? }
     self.secondary_professions = secondary_professions.select{|p| !p.blank? }
   end
+
+
+  def ensure_main
+    unless user.has_character?
+      self.main = true
+    end
+  end
+
 
   def ensure_main_uniqueness
     if main_changed? && main
@@ -36,5 +46,6 @@ class Character
       end
     end
   end
+
 
 end

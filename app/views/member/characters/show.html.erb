@@ -1,14 +1,20 @@
-<div class="page-actions">
-    <% if current_user.officer? %>
+<h1 class="<%= @character.playable_class %>"><%= @character.name %></h1>
+
+<% if current_user.officer? %>
+    <div class="page-actions">
         <%= link_to "Editer", edit_member_character_path(@character), class: 'button' %>
-    <% end %>
+    </div>
+<% end %>
+
+
+<div class="character-show-crest <%= @character.playable_class %>">
+    <div class="character-show-level <%= @character.playable_class %>"><%= @character.level %></div>
+    <div class="character-show-class"><div class="wow-icon <%= @character.playable_class %>-<%= @character.spec %>"></div></div>
 </div>
 
-<div class="character-show-name <%= @character.playable_class %>"><%= @character.name %></div>
-<div class="character-show-level"><%= @character.level %></div>
-<div class="character-show-crest <%= @character.playable_class %>"></div>
 
-<div class="character-show-class"><%= @character.playable_class %> <%= @character.spec %></div>
+
+
 <div class="character-show-professions">
     <% @character.primary_professions.each do |profession| %>
         <div class="wow-icon <%= profession %>"></div>
