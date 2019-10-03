@@ -78,7 +78,7 @@ $(function () {
             eventLimit: true, // allow "more" link when too many events
             events: events,
             dateClick (info) {
-                window.location.replace('/member/calendar_events/new?date=' + info.dateStr)
+                //window.location.replace('/member/calendar_events/new?date=' + info.dateStr)
             },
             eventRender: initTippyForCalendarEvent,
             buttonText: {
@@ -103,6 +103,7 @@ $(function () {
             animation: 'fade',
             flipOnUpdate: true,
             maxWidth: 600,
+            delay: [0, 0],
             onShow (instance) {
                 $.get('/member/calendar_events/' + event.id + '/preview', function (html) {
                     instance.setContent(html)

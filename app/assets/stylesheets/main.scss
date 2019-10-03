@@ -572,26 +572,39 @@ body .tippy-tooltip {
     &.onyxia {
         background-image: image-url('onyxia_crop.jpg');
     }
+
+
+    .calendar-event-name {
+        font-size: 2em;
+        background: rgba(0,0,0,0.8);
+        margin-bottom: 10px;
+    }
+
+    .calendar-event-date {
+        text-shadow: 0 0 3px black, 0 0 3px black;
+        strong {
+            font-weight: bold;
+        }
+        span {
+            font-style: italic;
+        }
+    }
+
+    ul {
+        margin-top: 10px;
+        list-style: none;
+    }
+
+    li {
+        background: black;
+        float: left;
+        padding: 2px;
+        border-radius: 3px;
+        margin: 5px;
+    }
+
 }
 
-.calendar-event-name {
-    font-size: 2em;
-}
-
-.calendar-event-date {
-    font-style: italic;
-}
-
-.calendar-event-owner {
-    font-style: italic;
-    font-size: .8em;
-    padding-bottom: 15px;
-}
-
-.participants h2 {
-    font-size: 2em;
-    text-align: center;
-}
 
 .page-actions {
     text-align: right;

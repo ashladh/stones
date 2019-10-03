@@ -22,12 +22,11 @@ module Member
 
 
     def event_participation_params
-      permitted_params = params[:event_participation].permit(:calendar_event_id, :character_id, :presence)
-      if current_user.officer?
-        permitted_params = permitted_params.permit(:status)
-      end
-      permitted_params
+      allowed = [:calendar_event_id, :character_id, :presence]
+      allowed << :status if current_user.officer?
+      params[:event_participation].permit(allowed)
     end
+
 
     def check_character_ownership
       character = Character.find(event_participation_params[:character_id])
