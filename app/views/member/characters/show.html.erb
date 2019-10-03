@@ -1,3 +1,9 @@
+<div class="page-actions">
+    <% if current_user.officer? %>
+        <%= link_to "Editer", edit_member_character_path(@character), class: 'button' %>
+    <% end %>
+</div>
+
 <div class="character-show-name <%= @character.playable_class %>"><%= @character.name %></div>
 <div class="character-show-level"><%= @character.level %></div>
 <div class="character-show-crest <%= @character.playable_class %>"></div>

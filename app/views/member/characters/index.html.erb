@@ -1,6 +1,4 @@
-<h1>Personnages</h1>
-
-<div><%= link_to "Nouveau personnage", new_member_character_path %></div>
+<h1>Roster</h1>
 
 
 <table id="characters" class="display" style="width:100%">
@@ -16,7 +14,7 @@
     <tbody>
         <% @characters.each do |character| %>
             <tr>
-                <td><%= link_to character.name, edit_member_character_path(character) %></td>
+                <td><%= link_to character.name, member_character_path(character), class: character.playable_class %></td>
                 <td><%= character.level %></td>
                 <td>
                     <span class="hidden"><%= character.playable_class %>-<%= character.spec %></span>
@@ -26,6 +24,9 @@
                     <div class="wow-icon <%= character.playable_class %>-<%= character.spec %>"></div>
                 </td>
                 <td>
+                    <span class="hidden">
+                        <%= translated_professions character %>
+                    </span>
                     <% character.primary_professions.each do |profession| %>
                         <div class="wow-icon <%= profession %>"></div>
                     <% end %>

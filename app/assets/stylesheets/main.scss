@@ -160,10 +160,7 @@ table.dataTable.hover tbody tr.odd:hover, table.dataTable.display tbody tr.odd:h
 }
 
 table.dataTable thead th, table.dataTable thead td {
-    color: #f8b700;
-    &:hover, &.sorting_desc, &.sorting_asc {
-        color: white;
-    }
+    color: white;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__rendered li {
@@ -297,7 +294,7 @@ th, td {
         background-image: image-url('icons/rogue_combat.jpg');
     }
 
-    &.rogue-subtlety {
+    &.rogue-subtelty {
         background-image: image-url('icons/rogue_subtlety.jpg');
     }
 
@@ -474,31 +471,31 @@ th, td {
 .character-show-name {
     font-size: 2em;
     text-align: center;
+}
 
-    &.druid {
-        color: #FF7D0A;
-    }
-    &.hunter {
-        color: #ABD473;
-    }
-    &.mage {
-        color: #69CCF0;
-    }
-    &.priest {
-        color: #FFFFFF;
-    }
-    &.rogue {
-        color: #FFF569;
-    }
-    &.shaman {
-        color: #0070DE;
-    }
-    &.warlock {
-        color: #9482C9;
-    }
-    &.warrior {
-        color: #C79C6E;
-    }
+.druid {
+    color: #FF7D0A;
+}
+.hunter {
+    color: #ABD473;
+}
+.mage {
+    color: #69CCF0;
+}
+.priest {
+    color: #FFFFFF;
+}
+.rogue {
+    color: #FFF569;
+}
+.shaman {
+    color: #0070DE;
+}
+.warlock {
+    color: #9482C9;
+}
+.warrior {
+    color: #C79C6E;
 }
 
 .character-show-crest {
@@ -593,3 +590,7 @@ body .tippy-tooltip {
     text-align: center;
 }
 
+.page-actions {
+    text-align: right;
+    margin-bottom: 1em;
+}

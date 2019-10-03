@@ -83,7 +83,7 @@ a {
 }
 
 
-input.text-field, select.select, textarea {
+input.text-field, select.select, textarea, input[type="search"] {
     padding: .5em;
     border-radius: 5px;
     background-color: rgba(126, 21, 21, 0.3);
@@ -153,7 +153,8 @@ input.select2-search__field {
 
 .select2-container--default .select2-selection--multiple {
     background-color: rgba(126, 21, 21, 0.3);
-    border: 1px solid rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    height: 38px;
 }
 
 .select2-selection {

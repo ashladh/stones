@@ -1,38 +1,34 @@
 module ApplicationHelper
 
     def playable_class_labels
-        {
-            "Chasseur": "hunter",
-            "Druide": "druid",
-            "Démoniste": "warlock",
-            "Mage": "mage",
-            "Guerrier": "warrior",
-            "Prêtre": "priest",
-            "Chaman": "shaman",
-            "Voleur": "rogue",
-        }
+        labels = {}
+        I18n.t('playable_classes.').each do |key, value|
+            labels[value] = key.to_s
+        end
+        labels
     end
 
     def primary_professions_labels
-        {
-            "Alchimie": "alchemy",
-            "Couture": "tailoring",
-            "Dépeçage": "skinning",
-            "Enchantement": "enchanting",
-            "Forge": "blacksmithing",
-            "Herboristerie": "herbalism",
-            "Ingénierie": "engineering",
-            "Minage": "mining",
-            "Travail du cuir": "leatherworking"
-        }
+        labels = {}
+        I18n.t('primary_professions.').each do |key, value|
+            labels[value] = key.to_s
+        end
+        labels
     end
 
     def secondary_professions_labels
-        {
-            "Cuisine": "cooking",
-            "Pêche": "fishing",
-            "Secourisme": "firstaid"
-        }
+        labels = {}
+        I18n.t('secondary_professions.').each do |key, value|
+            labels[value] = key.to_s
+        end
+        labels
+    end
+
+    def translated_professions character
+        (
+            character.primary_professions.map{|p| t('primary_professions.' + p)} +
+            character.secondary_professions.map{|p| t('secondary_professions.' + p)}
+        ).join(', ')
     end
 
     def presence_labels

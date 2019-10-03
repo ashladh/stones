@@ -1,7 +1,9 @@
 <h1>Calendrier</h1>
 
 <% if current_user.officer? %>
-    <div><%= link_to "Nouvel événement", new_member_calendar_event_path, class: "button" %></div>
+    <div class="page-actions">
+        <%= link_to "Nouvel événement", new_member_calendar_event_path, class: "button" %>
+    </div>
 <% end %>
 
 <div id='calendar'></div>

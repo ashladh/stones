@@ -11,6 +11,32 @@ fr:
       user:
         one: membre
         other: membres
+      character:
+        one: personnage
+        other: personnages
+  playable_classes:
+    hunter: Chasseur
+    druid: Druide
+    warlock: Démoniste
+    mage: Mage
+    warrior: Guerrier
+    priest: Prêtre
+    shaman: Chaman
+    rogue: Voleur
+  primary_professions:
+    alchemy: Alchimie
+    tailoring: Couture
+    skinning: Dépeçage
+    enchanting: Enchantement
+    blacksmithing: Forge
+    herbalism: Herboristerie
+    engineering: Ingénierie
+    mining: Minage
+    leatherworking: Travail du cuir
+  secondary_professions:
+    cooking: Cuisine
+    fishing: Pêche
+    firstaid: Secourisme
   activerecord:
     errors:
       messages:

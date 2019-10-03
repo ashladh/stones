@@ -1,3 +1,7 @@
 <h1>Editer le personnage</h1>
-<%= link_to "Supprimer", member_character_path(@character), class: "button", method: :delete %>
+
+<div class="page-actions">
+    <%= link_to "Supprimer", member_character_path(@character), class: "button", method: :delete %>
+</div>
+
 <%= render "form", character: @character %>
