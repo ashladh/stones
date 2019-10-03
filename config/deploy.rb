@@ -3,8 +3,8 @@ set :repo_url, "git@github.com:ashladh/stones.git"
 
 set :ssh_options, { :forward_agent => true, :port => 22 }
 
-set :rvm_type, :system # or :user, depends on your rbenv setup
-set :rvm_ruby_version, 'ruby-2.6.4'
+set :rbenv_type, :system # or :user, depends on your rbenv setup
+set :rbenv_ruby, File.read('.ruby-version').strip
 
 set :deploy_to, "/var/www/stones"
 
@@ -17,14 +17,13 @@ set :linked_dirs, fetch(:linked_dirs, []).push(
   'tmp/pids',
   'tmp/cache',
   'tmp/sockets',
-  'vendor/bundle'
+  'vendor/bundle',
 )
 set :linked_files, fetch(:linked_files, []).push(
   'config/host.yml',
   'config/secrets.yml',
   'config/mongoid.yml'
 )
-
 
 namespace :deploy do
 
