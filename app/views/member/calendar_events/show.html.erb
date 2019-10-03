@@ -1,7 +1,7 @@
-<div><%= @calendar_event.name %></div>
-<div><%= l @calendar_event.date, format: :short %></div>
+<div class="calendar-event-name"><%= @calendar_event.name %></div>
+<div class="calendar-event-date"><%= l @calendar_event.date, format: :short %></div>
 <div><%= @calendar_event.description %></div>
-<div>Créé par <%= @calendar_event.user.nickname %></div>
+<div class="calendar-event-owner">Créé par <%= @calendar_event.user.nickname %></div>
 
 <% character = current_user.characters.first %>
 

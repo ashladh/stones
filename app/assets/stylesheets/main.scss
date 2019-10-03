@@ -676,3 +676,22 @@ body .tippy-tooltip {
     }
 }
 
+.calendar-event-name {
+    font-size: 2em;
+}
+
+.calendar-event-date {
+    font-style: italic;
+}
+
+.calendar-event-owner {
+    font-style: italic;
+    font-size: .8em;
+    padding-bottom: 15px;
+}
+
+.participants h2 {
+    font-size: 2em;
+    text-align: center;
+}
+
