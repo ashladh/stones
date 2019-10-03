@@ -82,9 +82,12 @@ h1 {
 
 
 #calendar .fc-button-primary {
-    background-color: #b30000;
-    color: black;
+    background-color: #712020;
+    color: white;
     border: none;
+    &:hover {
+        background-color: #606c76;
+    }
 }
 
 

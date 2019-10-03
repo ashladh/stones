@@ -80,7 +80,14 @@ $(function () {
             dateClick (info) {
                 window.location.replace('/member/calendar_events/new?date=' + info.dateStr)
             },
-            eventRender: initTippyForCalendarEvent
+            eventRender: initTippyForCalendarEvent,
+            buttonText: {
+                today:    "aujourd'hui",
+                month:    'mois',
+                week:     'semaine',
+                day:      'jour',
+                list:     'liste'
+            }
         })
         calendar.render()
     }

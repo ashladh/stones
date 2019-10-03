@@ -14,6 +14,9 @@ fr:
       character:
         one: personnage
         other: personnages
+      calendar_event:
+        one: événement
+        other: événements
   playable_classes:
     hunter: Chasseur
     druid: Druide
