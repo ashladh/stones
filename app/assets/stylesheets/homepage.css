@@ -17,7 +17,7 @@
 
 #nav {
     position: absolute;
-    top: 350px;
+    top: 250px;
     left: 0;
     width: 100%;
     z-index: 1;
@@ -26,7 +26,7 @@
 
 #container {
     position: absolute;
-    top: 417px;
+    top: 317px;
     left: 0;
     width: 100%;
 }
@@ -93,10 +93,11 @@
     float: left;
     background: rgba(203, 134, 134, 0.1);
     border-radius: 25px;
-    padding: .9em;
-    margin: .5em;
-    width: 240px;
-    height: 160px;
+    padding: 10px;
+    margin: 10px;
+    width: 285px;
+    height: 140px;
+    box-sizing: border-box;
     text-align: center;
 }
 

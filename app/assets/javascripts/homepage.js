@@ -1,12 +1,12 @@
 $(function () {
 
     var navposition = $('#nav').position().top
-    var scrollMargin = 200
+    var scrollMargin = 0
 
     var sectionsPositions = {}
     $('#nav .scrolllink').each(function () {
         var link = $(this)
-        var id = link.attr('href')
+        var id = link.attr('href').split('/')[1]
         var section = $(id)
 
         if (section.length > 0) {
