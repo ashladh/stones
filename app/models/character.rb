@@ -1,9 +1,14 @@
 class Character
   include Mongoid::Document
+  include Mongoid::Slug
+
 
   field :playable_class
   field :spec
+
   field :name
+  slug :name
+
   field :level, type: Integer, default: 60
   field :primary_professions, type: Array, default: ->{[]}
   field :secondary_professions, type: Array, default: ->{[]}
