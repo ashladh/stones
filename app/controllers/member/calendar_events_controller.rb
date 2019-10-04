@@ -75,12 +75,8 @@ module Member
 
 
     def check_permissions
-      unless current_user.officer?
-        redirect_to member_calendar_path
-        return
-      end
+      render_401 unless current_user.officer?
     end
-
 
   end
   

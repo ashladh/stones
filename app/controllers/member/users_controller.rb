@@ -16,10 +16,9 @@ module Member
 
 
     def update
-      if @user == current_user || @user.officer?
-        user_params[:rank] = @user.rank if user_params[:rank] == "guild_master"
-        @user.update(user_params)
-      end
+      user_params[:rank] = @user.rank if user_params[:rank] == "guild_master"
+      @user.update(user_params)
+
       redirect_to member_users_path
     end
 
@@ -28,6 +27,7 @@ module Member
       @user.destroy
       redirect_to member_users_path
     end
+
 
     def show
     end
@@ -49,10 +49,7 @@ module Member
 
 
     def check_permissions
-      unless @user == current_user || current_user.officer?
-        redirect_to member_users_path
-        return
-      end
+      render_401 unless @user == current_user || current_user.officer?
     end
 
 

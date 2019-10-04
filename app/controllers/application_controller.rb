@@ -11,4 +11,30 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
 
+
+  private
+
+
+  def render_401 layout = false
+    respond_to do |format|
+      format.html {
+        render file: 'public/401', status: :unauthorized, formats: [:html], layout: layout
+      }
+      format.js {
+        head :unauthorized
+      }
+    end
+  end
+
+  def render_404 layout = false
+    respond_to do |format|
+      format.html {
+        render file: 'public/404', status: :not_found, formats: [:html], layout: layout
+      }
+      format.js {
+        head :not_found
+      }
+    end
+  end
+
 end

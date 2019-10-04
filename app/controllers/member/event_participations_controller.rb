@@ -30,9 +30,7 @@ module Member
 
     def check_character_ownership
       character = Character.find(event_participation_params[:character_id])
-      if character && character.user != current_user
-        raise "Sors de mon code :)"
-      end
+      render_401 if character && character.user != current_user
     end
 
     
