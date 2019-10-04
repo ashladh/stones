@@ -35,12 +35,11 @@ module Member
 
     private
 
+
     def user_params
-      permitted_params = params[:user].permit(:email, :nickname)
-      if current_user.officer?
-        permitted_params = permitted_params.permit(:rank)
-      end
-      permitted_params
+      allowed = [:email, :nickname]
+      allowed << :rank if current_user.officer?
+      params[:user].permit(allowed)
     end
 
 
@@ -48,13 +47,15 @@ module Member
       @user = User.find(params[:id])
     end
 
+
     def check_permissions
       unless @user == current_user || current_user.officer?
         redirect_to member_users_path
         return
       end
     end
-    
+
+
   end
   
 end
