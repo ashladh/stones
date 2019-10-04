@@ -13,22 +13,25 @@
   <body>
     <div id="wrapper">
 
+
+      <div id="container">
+        <%= yield %>
+      </div>
+
       <nav id="nav">
+        <div class="member-logo">
+          <%= image_tag "logo.png" %>
+        </div>
         <ul>
           <li><%= link_to "Dashboard", member_path %></li>
           <li><%= link_to "Calendrier", member_calendar_path %></li>
           <li><%= link_to "Roster", member_characters_path %></li>
-          <li>&nbsp;</li>
           <% if current_user.officer? %>
             <li><%= link_to "Membres", member_users_path %></li>
           <% end %>
           <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
         </ul>
       </nav>
-
-      <div id="container">
-        <%= yield %>
-      </div>
 
     </div>
 
