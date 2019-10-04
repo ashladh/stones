@@ -545,11 +545,37 @@ th, td {
     height: 40px;
     background: black;
     border-radius: 50%;
-    left: 20px;
+    left: 75px;
     text-align: center;
-    padding-top: 9px;
+    padding-top: 6px;
     color: white;
-    top: 115px;
+    top: 10px;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+    &.druid {
+        border-color: #FF7D0A;
+    }
+    &.hunter {
+        border-color: #ABD473;
+    }
+    &.mage {
+        border-color: #69CCF0;
+    }
+    &.priest {
+        border-color: #FFFFFF;
+    }
+    &.rogue {
+        border-color: #FFF569;
+    }
+    &.shaman {
+        border-color: #0070DE;
+    }
+    &.warlock {
+        border-color: #9482C9;
+    }
+    &.warrior {
+        border-color: #C79C6E;
+    }
 }
 
 .character-show-professions {
@@ -562,11 +588,11 @@ th, td {
     height: 40px;
     background: #712020;
     border-radius: 50%;
-    right: 20px;
+    right: 75px;
     text-align: center;
     padding-top: 8px;
     color: black;
-    top: 115px;
+    top: 10px;
     text-shadow: 0 0 5px white;
 
     &.druid {
