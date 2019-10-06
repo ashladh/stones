@@ -673,6 +673,7 @@ body .tippy-tooltip {
 }
 
 .calendar-event-preview-container {
+    position: relative;
     text-align: left;
     font-size: 14px;
     width: 345px;
@@ -691,13 +692,15 @@ body .tippy-tooltip {
     .calendar-event-name {
         font-size: 1.2em;
         background: rgba(0,0,0,0.8);
-        padding: 10px;
+        padding: 8px;
+        height: 40px;
     }
 
     .calendar-event-date {
         text-shadow: 0 0 3px black, 0 0 3px black;
         background: rgba(0,0,0,0.6);
-        padding: 10px;
+        padding: 8px;
+        height: 40px;
         strong {
             font-weight: bold;
         }
@@ -706,19 +709,29 @@ body .tippy-tooltip {
         }
     }
 
-    .calendar-event-actions {
-        text-align: right;
-        padding-right: 10px;
-        .button {
-            height: auto;
-            border: 0.1rem solid #ffffff;
-            color: #ffffff;
-            line-height: 1.6;
-            background: #303030;
+    .calendar-event-infos {
+        height: 290px;
+        overflow: auto;
+        box-sizing: border-box;
+        padding: 8px;
+    }
 
+    .calendar-event-actions {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        bottom: 0;
+        a {
+            background: rgba(224, 109, 23, 0.8);
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 8px;
+            box-sizing: border-box;
+            font-weight: bold;
             &:hover {
-                background: black;
-                border: 0.1rem solid black;
+                background: rgba(0, 0, 0, 0.8);
+                color: white;
             }
         }
     }
@@ -735,11 +748,6 @@ body .tippy-tooltip {
         border-radius: 3px;
         margin: 5px;
     }
-
-}
-
-
-.calendar-event-info {
 
 }
 
