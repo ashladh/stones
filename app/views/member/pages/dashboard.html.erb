@@ -1,6 +1,6 @@
 <h1>Dashboard</h1>
 
-<h2>Vos personnages</h2>
+<h2 class="first">Vos personnages</h2>
 
 <% if current_user.has_character? %>
     Vous n'avez pas encore de personnage ! Créez en un pour pouvoir participer
@@ -14,3 +14,8 @@
     <%= render current_user.characters %>
 </div>
 
+
+<h2>Evenements à venir</h2>
+<div class="dashboard-calendar-events">
+    <%= render @calendar_events %>
+</div>

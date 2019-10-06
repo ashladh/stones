@@ -1,0 +1,20 @@
+<div class="calendar-event-preview-container <%= calendar_event.raid %>">
+
+    <div class="calendar-event-name"><%= calendar_event.name %></div>
+    <div class="calendar-event-date">
+        <strong><%= l calendar_event.date, format: :short %></strong> - Créé par <span><%= calendar_event.user.nickname %></span>
+    </div>
+
+    <div class="calendar-event-infos">
+
+    </div>
+
+    <div class="calendar-event-participations">
+
+    </div>
+
+    <div class="calendar-event-actions">
+        <%= link_to "Voir", member_calendar_event_path(calendar_event), class: "button calendar-event-button" %>
+    </div>
+
+</div>
