@@ -653,6 +653,7 @@ th, td {
 body .tippy-tooltip {
     background: rgba(0, 0, 0, 0.8);
     border-radius: 5px;
+    padding: 0;
 }
 
 
@@ -666,19 +667,22 @@ body .tippy-tooltip {
         width: calc(50% - 20px);
         margin-left: 20px;
         margin-bottom: 20px;
-        border-radius: 5px;
+
         height: 410px;
-        overflow: auto;
+
     }
 }
 
 .calendar-event-preview-container {
+
     position: relative;
     text-align: left;
     font-size: 14px;
     width: 345px;
     height: 400px;
     background-size: cover;
+    border-radius: 5px;
+    overflow: auto;
 
     &.molten_core {
         background-image: image-url('ragnaros_crop.jpg');
