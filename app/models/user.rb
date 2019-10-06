@@ -26,6 +26,12 @@ class User
   has_many :histories
   has_many :calendar_events
 
+  validates_uniqueness_of :nickname
+  validates_length_of :nickname, minimum: 3
+
+  before_save :sanitize_nickname
+
+
   def registered?
     rank == 'registered' || member?
   end
@@ -49,5 +55,13 @@ class User
   def has_character?
     characters.count == 0
   end
+
+
+  private
+
+  def sanitize_nickname
+    self.nickname = self.nickname.gsub(" ", "")
+  end
+
 
 end

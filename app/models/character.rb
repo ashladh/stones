@@ -25,6 +25,30 @@ class Character
   before_save :ensure_main_uniqueness
 
 
+
+  def class_and_spec
+    "#{playable_class}_#{spec}"
+  end
+
+  def role
+    Character.role_for class_and_spec
+  end
+
+
+  def self.role_for class_and_spec
+    roles = {
+      warrior_protection: "tank",
+      warrior_arms: "melee",
+      warrior_fury: "melee",
+      druid_guardian: "tank",
+      druid_feral: "melee",
+      druid_restoration: "healer",
+      druid_balance: "range"
+    }
+    roles[class_and_spec.to_sym]
+  end
+
+
   private
 
 
@@ -51,6 +75,8 @@ class Character
       end
     end
   end
+
+
 
 
 end

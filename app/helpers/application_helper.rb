@@ -32,11 +32,11 @@ module ApplicationHelper
     end
 
     def presence_labels
-        {
-            "Accepté": "accepted",
-            "Incertain": "tentative",
-            "Absent": "absent"
-        }
+        labels = {}
+        I18n.t('presence.').each do |key, value|
+            labels[value] = key.to_s
+        end
+        labels
     end
 
     def rank_labels user

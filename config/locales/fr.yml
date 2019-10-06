@@ -17,6 +17,22 @@ fr:
       calendar_event:
         one: événement
         other: événements
+      event_participation:
+        one: participation
+        other: participations
+  status:
+    stand_by: En attente
+    confirmed: Confirmé
+    refused: Refusé
+  presence:
+    accepted: Accepté
+    tentative: Incertain
+    absent: Absent
+  roles:
+    tank: Tank
+    melee: CaC
+    range: Distance
+    healer: Soigneur
   playable_classes:
     hunter: Chasseur
     druid: Druide
