@@ -23,11 +23,11 @@
 
 <div class="roster-manager">
     <div class="raid-roster">
-        <%= render 'roster_participations', name: 'Roster', participations_by_role: @calendar_event.roster_by_role %>
+        <%= render 'roster_participations', name: 'Confirmés', participations_by_role: @calendar_event.roster_by_role %>
     </div>
 
     <div class="raid-sidelines">
-        <%= render 'roster_participations', name: 'Banc de touche', participations_by_role: @calendar_event.sidelines_by_role %>
+        <%= render 'roster_participations', name: 'En attente', participations_by_role: @calendar_event.sidelines_by_role %>
     </div>
 
     <div class="raid-refused">

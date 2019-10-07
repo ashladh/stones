@@ -1,8 +1,14 @@
-<%= event_participation.character.name %> -
-<%= t "presence." + event_participation.presence %>
+<div class="event-participation">
+    <span class="<%= event_participation.character.playable_class %>"><%= event_participation.character.name %></span>
 
-<% if current_user.officer? %>
-    <%= link_to("Confirmé", member_event_participation_path(event_participation, event_participation: {status: 'confirmed'}), method: :put, class: "button") unless event_participation.status == 'confirmed' %>
-    <%= link_to("En attente", member_event_participation_path(event_participation, event_participation: {status: 'stand_by'}), method: :put, class: "button") unless event_participation.status == 'stand_by' %>
-    <%= link_to("Refusé", member_event_participation_path(event_participation, event_participation: {status: 'refused'}), method: :put, class: "button") unless event_participation.status == 'refused' %>
-<% end %>
+    <% if current_user.officer? %>
+            <%= link_to t("presence." + event_participation.presence), '', class: 'edit-participation-status' %>
+            <div class="participation-status-links">
+                <%= link_to("Confirmé", member_event_participation_path(event_participation, event_participation: {status: 'confirmed'}), method: :put, class: "button") unless event_participation.status == 'confirmed' %>
+                <%= link_to("En attente", member_event_participation_path(event_participation, event_participation: {status: 'stand_by'}), method: :put, class: "button") unless event_participation.status == 'stand_by' %>
+                <%= link_to("Refusé", member_event_participation_path(event_participation, event_participation: {status: 'refused'}), method: :put, class: "button") unless event_participation.status == 'refused' %>
+            </div>
+        <% else %>
+            <%= t "presence." + event_participation.presence %>
+        <% end %>
+</div>

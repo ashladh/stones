@@ -864,3 +864,27 @@ body .tippy-tooltip {
     clear: both;
     margin-top: 20px;
 }
+
+.participation-status-links {
+    display: none;
+}
+
+.tippy-content .button {
+    margin: 5px;
+}
+
+
+.event-participation {
+    display: inline-block;
+    font-size: 0.9em;
+    padding: 0 4px;
+    border-radius: 4px;
+    margin-right: 5px;
+    background: rgba(170, 255, 255, 0.1);
+
+    .participation-presence {
+        display: inline-block;
+        font-size: 0.7em;
+        background: rgba(0, 0, 0, 0.3);
+    }
+}

@@ -53,6 +53,7 @@ $(function () {
     initSpecSelect()
     initDatePicker()
     initParticipationForm()
+    initParticipationStatusHandler()
 
 
 
@@ -217,6 +218,31 @@ $(function () {
         })
     }
 
+
+    function initParticipationStatusHandler () {
+        if ($('.edit-participation-status').length === 0) {
+            return
+        }
+
+        $('.edit-participation-status').each(function () {
+            var $tooltip = $(this)
+            var content = $tooltip.parent('.event-participation').find('.participation-status-links').html()
+            tippy(this, {
+                theme: 'dark',
+                interactive: true,
+                content: content,
+                animateFill: false,
+                animation: 'fade',
+                flipOnUpdate: true,
+                maxWidth: 600,
+                delay: [0, 0]
+            })
+
+            $tooltip.on('click', function (e) {
+                e.preventDefault()
+            })
+        })
+    }
 
     $(document).ready(function () {
         $('.professions-select').select2()
