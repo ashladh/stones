@@ -44,9 +44,10 @@
     </div>
 </div>
 
-<ul>
-    <% @calendar_event.event_participations.select(&:persisted?).each do |event_participation| %>
-        <li>
+<% @participations_by_role.each do |role, participations| %>
+    <div>
+        <div class="role-name"><%= t "roles." + role %></div>
+        <% participations.each do |event_participation| %>
             <%= event_participation.character.name %> -
             <%= t "presence." + event_participation.presence %>
             <%= t "status." + event_participation.status %>
@@ -56,7 +57,7 @@
                 <%= link_to("En attente", member_event_participation_path(event_participation, event_participation: {status: 'stand_by'}), method: :put, class: "button") unless event_participation.status == 'stand_by' %>
                 <%= link_to("Refusé", member_event_participation_path(event_participation, event_participation: {status: 'refused'}), method: :put, class: "button") unless event_participation.status == 'refused' %>
             <% end %>
-        </li>
-    <% end %>
-</ul>
+        <% end %>
+    </div>
+<% end %>
 

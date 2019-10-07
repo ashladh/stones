@@ -56,5 +56,4 @@ module ApplicationHelper
             "Onyxia's Lair": "onyxia"
         }
     end
-
 end
