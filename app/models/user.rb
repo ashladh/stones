@@ -24,7 +24,6 @@ class User
 
   has_many :characters
   has_many :histories
-  has_many :calendar_events
 
   validates_uniqueness_of :nickname
   validates_length_of :nickname, minimum: 3
@@ -49,7 +48,7 @@ class User
   end
 
   def main_character
-    characters.where(main: true).first
+    characters.where(main: true).first || characters.first
   end
 
   def has_character?
@@ -59,6 +58,7 @@ class User
 
   private
 
+  
   def sanitize_nickname
     self.nickname = self.nickname.gsub(" ", "")
   end

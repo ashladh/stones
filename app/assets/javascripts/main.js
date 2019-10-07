@@ -52,6 +52,7 @@ $(function () {
     initCharacterTable()
     initSpecSelect()
     initDatePicker()
+    initParticipationForm()
 
 
 
@@ -202,6 +203,20 @@ $(function () {
             locale: 'fr'
         })
     }
+
+
+    function initParticipationForm () {
+        if ($('.your-participation').length === 0) {
+            return
+        }
+
+        $('.your-participation-toggle a').on('click', function (e) {
+            e.preventDefault()
+            $('.your-participation-form').show()
+            $('.your-participation-toggle').hide()
+        })
+    }
+
 
     $(document).ready(function () {
         $('.professions-select').select2()

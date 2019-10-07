@@ -1,20 +1,47 @@
+
 <h1><%= @calendar_event.name %></h1>
-<div class="calendar-event-info">
-    <div class="calendar-event-date"><%= l @calendar_event.date, format: :long %></div>
-    <div><%= @calendar_event.description %></div>
-    <div class="calendar-event-owner">Créé par <%= @calendar_event.user.nickname %></div>
+
+<% if current_user.officer? %>
+    <div class="page-actions">
+        <%= link_to "Editer", edit_member_calendar_event_path(@calendar_event), class: "button" %>
+        <%= link_to "Supprimer", member_calendar_event_path(@calendar_event), class: "button", method: :delete, confirm: "Confirmer la suppression" %>
+    </div>
+<% end %>
+
+
+<div class="calendar-event-banner <%= @calendar_event.raid %>">
+    <div class="calendar-event-info">
+        <div class="calendar-event-date"><%= l @calendar_event.date, format: :long %></div>
+        <div><%= @calendar_event.description %></div>
+        <div class="calendar-event-owner">Créé par <%= @calendar_event.user.nickname %></div>
+    </div>
 </div>
 
 
-<div class="you-participation">
-    <% character = current_user.main_character %>
+<div class="your-participation">
+    <div class="your-participation-toggle">
+        <% if @event_participation.persisted? %>
+            Votre disponibilité actuelle :
+            <strong><%= t "presence." + @event_participation.presence %></strong>
+            avec le personnage
+            <strong><%= @event_participation.character.name %></strong>
+            <br>
+            <div class="link"><%= link_to "Modifier votre disponibilité", "", class: "button" %></div>
+        <% else %>
+            <%= link_to "Indiquez votre disponibilité", "", class: "button" %>
+        <% end %>
+    </div>
 
-    <%= form_for [:member, @event_participation] do |f| %>
-        <%= f.hidden_field :calendar_event_id %>
-        <%= f.select :character_id, options_from_collection_for_select(current_user.characters.all, :id, :name, @event_participation.character_id), {}, {class: "select"} %>
-        <%= f.select :presence, options_for_select(presence_labels, @event_participation.presence), {}, {class: "select"}%>
-        <%= f.submit %>
-    <% end %>
+    <div class="your-participation-form">
+        <% character = @event_participation.character || current_user.main_character %>
+
+        <%= form_for [:member, @event_participation] do |f| %>
+            <%= f.hidden_field :calendar_event_id %>
+            <%= f.select :character_id, options_from_collection_for_select(current_user.characters.all, :id, :name, @event_participation.character_id), {}, {class: "select"} %>
+            <%= f.select :presence, options_for_select(presence_labels, @event_participation.presence), {}, {class: "select"} %>
+            <%= f.submit "Enregistrer ma disponibilité" %>
+        <% end %>
+    </div>
 </div>
 
 <ul>
@@ -33,7 +60,3 @@
     <% end %>
 </ul>
 
-<% if current_user.officer? %>
-    <%= link_to "Editer", edit_member_calendar_event_path(@calendar_event), class: "button" %>
-    <%= link_to "Supprimer", member_calendar_event_path(@calendar_event), class: "button", method: :delete, confirm: "Confirmer la suppression" %>
-<% end %>
