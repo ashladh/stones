@@ -2,6 +2,7 @@ module Member
 
   class EventParticipationsController < MemberController
 
+    before_action :get_event_participation, only: [:update]
     before_action :check_character_ownership, only: [:create, :update]
 
     def create
@@ -12,13 +13,18 @@ module Member
 
 
     def update
-      @event_participation = EventParticipation.find(params[:id])
+
       @event_participation.update!(event_participation_params)
       redirect_to member_calendar_event_path(@event_participation.calendar_event.id)
     end
 
 
     private
+
+
+    def get_event_participation
+      @event_participation = EventParticipation.find(params[:id])
+    end
 
 
     def event_participation_params
@@ -29,7 +35,7 @@ module Member
 
 
     def check_character_ownership
-      character = Character.find(event_participation_params[:character_id])
+      character = @event_participation.character
       render_401 if character && character.user != current_user
     end
 
