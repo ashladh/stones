@@ -1,3 +1,4 @@
+
 <h1><%= @calendar_event.name %></h1>
 
 <% if current_user.officer? %>
@@ -7,10 +8,13 @@
     </div>
 <% end %>
 
-<div class="calendar-event-info">
-    <div class="calendar-event-date"><%= l @calendar_event.date, format: :long %></div>
-    <div><%= @calendar_event.description %></div>
-    <div class="calendar-event-owner">Créé par <%= @calendar_event.user.nickname %></div>
+
+<div class="calendar-event-banner <%= @calendar_event.raid %>">
+    <div class="calendar-event-info">
+        <div class="calendar-event-date"><%= l @calendar_event.date, format: :long %></div>
+        <div><%= @calendar_event.description %></div>
+        <div class="calendar-event-owner">Créé par <%= @calendar_event.user.nickname %></div>
+    </div>
 </div>
 
 
@@ -22,7 +26,7 @@
             avec le personnage
             <strong><%= @event_participation.character.name %></strong>
             <br>
-            <%= link_to "Modifier votre disponibilité", "", class: "button" %>
+            <div class="link"><%= link_to "Modifier votre disponibilité", "", class: "button" %></div>
         <% else %>
             <%= link_to "Indiquez votre disponibilité", "", class: "button" %>
         <% end %>
