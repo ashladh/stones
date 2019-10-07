@@ -17,7 +17,8 @@ class CalendarEvent
       id: _id.to_s,
       title: name,
       start: date,
-      url: Rails.application.routes.url_helpers.member_calendar_event_path(self)
+      url: Rails.application.routes.url_helpers.member_calendar_event_path(self),
+      classNames: [raid]
     }
   end
 
