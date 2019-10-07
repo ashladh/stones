@@ -18,46 +18,20 @@
 </div>
 
 
-<div class="your-participation">
-    <div class="your-participation-toggle">
-        <% if @event_participation.persisted? %>
-            Votre disponibilité actuelle :
-            <strong><%= t "presence." + @event_participation.presence %></strong>
-            avec le personnage
-            <strong><%= @event_participation.character.name %></strong>
-            <br>
-            <div class="link"><%= link_to "Modifier votre disponibilité", "", class: "button" %></div>
-        <% else %>
-            <%= link_to "Indiquez votre disponibilité", "", class: "button" %>
-        <% end %>
+<%= render 'your_participation', event_participation: @event_participation %>
+
+
+<div class="roster-manager">
+    <div class="raid-roster">
+        <%= render 'roster_participations', name: 'Roster', participations_by_role: @calendar_event.roster_by_role %>
     </div>
 
-    <div class="your-participation-form">
-        <% character = @event_participation.character || current_user.main_character %>
+    <div class="raid-sidelines">
+        <%= render 'roster_participations', name: 'Banc de touche', participations_by_role: @calendar_event.sidelines_by_role %>
+    </div>
 
-        <%= form_for [:member, @event_participation] do |f| %>
-            <%= f.hidden_field :calendar_event_id %>
-            <%= f.select :character_id, options_from_collection_for_select(current_user.characters.all, :id, :name, @event_participation.character_id), {}, {class: "select"} %>
-            <%= f.select :presence, options_for_select(presence_labels, @event_participation.presence), {}, {class: "select"} %>
-            <%= f.submit "Enregistrer ma disponibilité" %>
-        <% end %>
+    <div class="raid-refused">
+        <div class="raid-position-name">Absents et refusés</div>
+        <%= render @calendar_event.refused_participations %>
     </div>
 </div>
-
-<% @participations_by_role.each do |role, participations| %>
-    <div>
-        <div class="role-name"><%= t "roles." + role %></div>
-        <% participations.each do |event_participation| %>
-            <%= event_participation.character.name %> -
-            <%= t "presence." + event_participation.presence %>
-            <%= t "status." + event_participation.status %>
-
-            <% if current_user.officer? %>
-                <%= link_to("Confirmé", member_event_participation_path(event_participation, event_participation: {status: 'confirmed'}), method: :put, class: "button") unless event_participation.status == 'confirmed' %>
-                <%= link_to("En attente", member_event_participation_path(event_participation, event_participation: {status: 'stand_by'}), method: :put, class: "button") unless event_participation.status == 'stand_by' %>
-                <%= link_to("Refusé", member_event_participation_path(event_participation, event_participation: {status: 'refused'}), method: :put, class: "button") unless event_participation.status == 'refused' %>
-            <% end %>
-        <% end %>
-    </div>
-<% end %>
-

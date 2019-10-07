@@ -793,6 +793,9 @@ body .tippy-tooltip {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     padding: 20px;
+    overflow: auto;
+    text-shadow: 0 0 3px black;
+
 
     &.onyxia {
         background-image: image-url('banner_onyxia.jpg');
@@ -837,4 +840,27 @@ body .tippy-tooltip {
 .fc-toolbar h2 {
     padding-top: 0;
     text-transform: capitalize;
+}
+
+.raid-roster {
+    float: left;
+    width: calc(66.66% - 20px);
+    margin-right: 20px;
+}
+
+.raid-sidelines {
+    float: left;
+    width: 33.33%;
+}
+
+.role-segment {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.raid-refused {
+    clear: both;
+    margin-top: 20px;
 }

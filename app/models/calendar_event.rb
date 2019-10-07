@@ -34,4 +34,19 @@ class CalendarEvent
     event_participation
   end
 
+
+  def roster_by_role
+    event_participations.roster.reject{|p| p.role.blank?}.group_by(&:role)
+  end
+
+
+  def sidelines_by_role
+    event_participations.sidelines.reject{|p| p.role.blank?}.group_by(&:role)
+  end
+
+
+  def refused_participations
+    event_participations.refused
+  end
+
 end

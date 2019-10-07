@@ -35,15 +35,6 @@ module Member
 
     def show
       @event_participation = @calendar_event.user_participation(current_user)
-      @event_participations = @calendar_event.event_participations
-      @participations_by_role = {}
-
-      @event_participations.each do |participation|
-        if participation.persisted?
-          @participations_by_role[participation.character.role] ||= []
-          @participations_by_role[participation.character.role] << participation
-        end
-      end
     end
 
 

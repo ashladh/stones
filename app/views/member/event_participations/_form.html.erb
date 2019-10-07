@@ -1,0 +1,8 @@
+<% character = event_participation.character || current_user.main_character %>
+
+<%= form_for [:member, event_participation] do |f| %>
+    <%= f.hidden_field :calendar_event_id %>
+    <%= f.select :character_id, options_from_collection_for_select(current_user.characters.all, :id, :name, event_participation.character_id), {}, {class: "select"} %>
+    <%= f.select :presence, options_for_select(presence_labels, event_participation.presence), {}, {class: "select"} %>
+    <%= f.submit "Enregistrer ma disponibilité" %>
+<% end %>
