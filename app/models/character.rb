@@ -42,8 +42,26 @@ class Character
       warrior_fury: "melee",
       druid_guardian: "tank",
       druid_feral: "melee",
-      druid_restoration: "healer",
-      druid_balance: "range"
+      druid_druidrestoration: "healer",
+      druid_balance: "range",
+      hunter_marksmanship: "range",
+      hunter_beastmastery: "range",
+      hunter_survival: "range",
+      warlock_destruction: "range",
+      warlock_affliction: "range",
+      warlock_demonology: "range",
+      shaman_enhancement: "melee",
+      shaman_elemental: "range",
+      shaman_shamanrestoration: "healer",
+      priest_holy: "healer",
+      priest_discipline: "healer",
+      priest_shadow: "range",
+      rogue_assassination: "melee",
+      rogue_combat: "melee",
+      rogue_subtelty: "melee",
+      mage_arcane: "range",
+      mage_fire: "range",
+      mage_frost: "range"
     }
     roles[class_and_spec.to_sym]
   end
