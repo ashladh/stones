@@ -760,3 +760,29 @@ body .tippy-tooltip {
     text-align: right;
     margin-bottom: 1em;
 }
+
+
+.your-participation {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+
+    .your-participation-form {
+        display: none;
+    }
+
+    form {
+        margin-bottom: 0;
+        margin-left: -10px;
+        select {
+            margin-left: 10px;
+            width: calc(50% - 10px);
+            float: left;
+        }
+
+        input[type="submit"] {
+            margin-left: 10px;
+            margin-bottom: 0;
+        }
+    }
+}

@@ -9,7 +9,7 @@ class CalendarEvent
   field :raid, type: String, default: ""
 
   belongs_to :user
-  has_many :event_participations
+  has_many :event_participations, dependent: :destroy
 
 
   def for_fullcalendar
