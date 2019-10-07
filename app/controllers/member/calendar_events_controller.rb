@@ -39,8 +39,10 @@ module Member
       @participations_by_role = {}
 
       @event_participations.each do |participation|
-        @participations_by_role[participation.character.role] ||= []
-        @participations_by_role[participation.character.role] << participation
+        if participation.persisted?
+          @participations_by_role[participation.character.role] ||= []
+          @participations_by_role[participation.character.role] << participation
+        end
       end
     end
 
