@@ -14,6 +14,7 @@
         <div class="calendar-event-date"><%= l @calendar_event.date, format: :long %></div>
         <div><%= @calendar_event.description %></div>
         <div class="calendar-event-owner">Créé par <%= @calendar_event.user.nickname %></div>
+        <%= render 'stats', stats: @calendar_event.stats %>
     </div>
 </div>
 
@@ -32,6 +33,8 @@
 
     <div class="raid-refused">
         <div class="raid-position-name">Absents et refusés</div>
-        <%= render @calendar_event.refused_participations %>
+        <div class="role-segment">
+            <%= render @calendar_event.refused_participations %>
+        </div>
     </div>
 </div>

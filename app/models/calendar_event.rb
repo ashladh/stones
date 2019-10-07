@@ -49,4 +49,27 @@ class CalendarEvent
     event_participations.refused
   end
 
+
+  def stats
+    stats_ = {
+      confirmed: 0,
+      stand_by: 0,
+      refused: 0,
+      tank: 0,
+      healer: 0,
+      melee: 0,
+      range: 0
+    }
+
+    event_participations.each do |event_participation|
+      stats_[event_participation.status.to_sym] += 1
+
+      unless event_participation.role.nil?
+        stats_[event_participation.role.to_sym] += 1
+      end
+    end
+
+    stats_
+  end
+
 end

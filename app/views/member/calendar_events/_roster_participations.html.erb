@@ -1,7 +1,9 @@
 <div class="raid-position-name"><%= name %></div>
 <% participations_by_role.each do |role, event_participations| %>
     <div class="role-segment">
-        <div class="role-name"><%= t "roles." + role %></div>
+        <div class="role-name">
+            <%= event_participations.count %> <%= t("roles." + role) %>(s)
+        </div>
         <%= render event_participations %>
     </div>
 <% end %>

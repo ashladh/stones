@@ -723,6 +723,7 @@ body .tippy-tooltip {
     }
 
     .calendar-event-infos {
+        background: rgba(0,0,0,0.4);
         height: 290px;
         overflow: auto;
         box-sizing: border-box;
@@ -810,7 +811,7 @@ body .tippy-tooltip {
     padding: 10px;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 
     .your-participation-toggle {
         text-align: center;
@@ -846,11 +847,13 @@ body .tippy-tooltip {
     float: left;
     width: calc(66.66% - 20px);
     margin-right: 20px;
+    margin-bottom: 40px;
 }
 
 .raid-sidelines {
     float: left;
     width: 33.33%;
+    margin-bottom: 40px;
 }
 
 .role-segment {
@@ -862,7 +865,6 @@ body .tippy-tooltip {
 
 .raid-refused {
     clear: both;
-    margin-top: 20px;
 }
 
 .participation-status-links {
@@ -873,6 +875,14 @@ body .tippy-tooltip {
     margin: 5px;
 }
 
+.raid-position-name {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-shadow: 0 0 3px black;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
 
 .event-participation {
     display: inline-block;
