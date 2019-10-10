@@ -704,6 +704,7 @@ body .tippy-tooltip {
 
     .calendar-event-name {
         font-size: 1.2em;
+        font-weight: bold;
         background: rgba(0,0,0,0.8);
         padding: 8px;
         height: 40px;
@@ -897,4 +898,13 @@ body .tippy-tooltip {
         font-size: 0.7em;
         background: rgba(0, 0, 0, 0.3);
     }
+}
+
+.calendar-event-owner {
+    font-style: italic;
+}
+
+.calendar-event-date {
+    font-size: 1.2em;
+    font-weight: bold;
 }

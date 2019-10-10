@@ -12,7 +12,7 @@
 <div class="calendar-event-banner <%= @calendar_event.raid %>">
     <div class="calendar-event-info">
         <div class="calendar-event-date"><%= l @calendar_event.date, format: :long %></div>
-        <div><%= @calendar_event.description %></div>
+        <div class="calendar-event-description"><%= @calendar_event.description %></div>
         <div class="calendar-event-owner">Créé par <%= @calendar_event.user.nickname %></div>
         <%= render 'stats', stats: @calendar_event.stats %>
     </div>
