@@ -71,7 +71,7 @@ class CalendarEvent
       stats_[status.to_sym] += 1
 
       unless event_participation.role.nil?
-        stats_[event_participation.role.to_sym] += 1
+        stats_[event_participation.role.to_sym] += 1 if event_participation.status == confirmed && !event_participation.presence != 'absent'
       end
     end
 
