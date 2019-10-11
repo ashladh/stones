@@ -19,6 +19,7 @@ class Character
 
   belongs_to :user
   has_many :event_participations, dependent: :destroy
+  has_many :histories, as: :subject
 
   before_save :sanitize_professions
   before_create :ensure_main

@@ -23,7 +23,7 @@ class User
   field :dkp, type: Integer, default: 0
 
   has_many :characters
-  has_many :histories
+  has_many :histories, as: :subject
 
   validates_uniqueness_of :nickname
   validates_length_of :nickname, minimum: 3

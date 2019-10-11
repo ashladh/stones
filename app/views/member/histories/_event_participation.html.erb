@@ -1,0 +1,17 @@
+
+<% event_participation = EventParticipation.where(id: history.data[:event_participation_id]).first %>
+<% if event_participation %>
+    <% calendar_event = event_participation.calendar_event %>
+
+    <div>
+        Evénement
+        <%= link_to event_participation.calendar_event.name, member_calendar_event_path(calendar_event) %>
+        &middot;
+        Présence : <strong><%= t "presence." + history.data[:presence] %></strong>
+        &middot;
+        Status : <strong><%= t "status." + history.data[:status] %></strong>
+    </div>
+
+<% else %>
+    Evenement supprimé
+<% end %>

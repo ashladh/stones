@@ -1,0 +1,9 @@
+<div class="history <%= history.type %>">
+    <div class="timestamp">
+        <%= l history.created_at, format: :long %>
+        <% if history.actor %>
+            par <%= link_to history.actor.nickname, member_user_path(history.actor) %>
+        <% end %>
+    </div>
+    <%= render "member/histories/#{history.type}", history: history %>
+</div>

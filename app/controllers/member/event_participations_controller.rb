@@ -9,13 +9,14 @@ module Member
       @event_participation = EventParticipation.new(event_participation_params)
       check_character_ownership
 
+      @event_participation.updated_by = current_user
       @event_participation.save!
       redirect_to member_calendar_event_path(@event_participation.calendar_event.id)
     end
 
 
     def update
-
+      @event_participation.updated_by = current_user
       @event_participation.update!(event_participation_params)
       redirect_to member_calendar_event_path(@event_participation.calendar_event.id)
     end

@@ -40,6 +40,7 @@ module Member
 
 
     def show
+      @histories = @character.histories.desc(:created_at).limit(10)
     end
 
 
