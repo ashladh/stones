@@ -64,7 +64,7 @@ class CalendarEvent
     event_participations.each do |event_participation|
       status = event_participation.status
 
-      if event_participation.presence == 'Absent'
+      if event_participation.presence == 'absent'
         status = 'refused'
       end
 
