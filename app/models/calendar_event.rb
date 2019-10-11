@@ -62,7 +62,13 @@ class CalendarEvent
     }
 
     event_participations.each do |event_participation|
-      stats_[event_participation.status.to_sym] += 1
+      status = event_participation.status
+
+      if event_participation.presence == 'absent'
+        status = 'refused'
+      end
+
+      stats_[status.to_sym] += 1
 
       unless event_participation.role.nil?
         stats_[event_participation.role.to_sym] += 1
