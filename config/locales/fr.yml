@@ -20,6 +20,11 @@ fr:
       event_participation:
         one: participation
         other: participations
+  ranks:
+    guild_master: GM
+    officer: Officier
+    member: Membre
+    registered: Enregistré
   status:
     stand_by: En attente
     confirmed: Confirmé
@@ -56,6 +61,41 @@ fr:
     cooking: Cuisine
     fishing: Pêche
     firstaid: Secourisme
+  specs:
+    hunter:
+      marksmanship: Précision
+      survival: Survie
+      beastmastery: Maîtrise des bêtes
+    druid:
+      balance: Equilibre
+      restoration: Restauration
+      feral: Farouche
+      guardian: Guardien
+    warlock:
+      destruction: Destruction
+      demonology: Démonologie
+      affliction: Affliction
+    warrior:
+      arms: Armes
+      fury: Fureur
+      protection: Protection
+    shaman:
+      enhancement: Amélioration
+      elemental: Elémental
+      shaman: Restauration
+    priest:
+      discipline: Discipline
+      shadow: Ombre
+      holy: Sacré
+    rogue:
+      assassination: Assassinat
+      combat: Combat
+      subtelty: Finesse
+    mage:
+      arcane: Arcane
+      fire: Feu
+      frost: Givre
+
   activerecord:
     errors:
       messages:

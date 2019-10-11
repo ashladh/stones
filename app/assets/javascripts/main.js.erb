@@ -1,55 +1,12 @@
 $(function () {
 
 
-
-    var classesSpecs = {
-        hunter: {
-            'Précision': 'marksmanship',
-            'Survie': 'survival',
-            'Maîtrise des bêtes': 'beastmastery'
-        },
-        druid: {
-            'Equilibre': 'balance',
-            'Restauration': 'druidrestoration',
-            'Farouche': 'feral',
-            'Guardien': 'guardian'
-        },
-        warlock: {
-            'Destruction': 'destruction',
-            'Démonologie': 'demonology',
-            'Affliction': 'affliction'
-        },
-        warrior: {
-            'Armes': 'arms',
-            'Fureur': 'fury',
-            'Protection': 'protection'
-        },
-        shaman: {
-            'Amélioration': 'enhancement',
-            'Elémental': 'elemental',
-            'Restauration': 'shamanrestoration'
-        },
-        priest: {
-            'Discipline': 'discipline',
-            'Ombre': 'shadow',
-            'Sacré': 'holy'
-        },
-        rogue: {
-            'Assassinat': 'assassination',
-            'Combat': 'combat',
-            'Finesse': 'subtelty'
-        },
-        mage: {
-            'Arcane': 'arcane',
-            'Feu': 'fire',
-            'Givre': 'frost'
-        }
-    }
-
+    var classesSpecs = <%= I18n.t('specs.').to_json %>
 
 
     initCalendar()
-    initCharacterTable()
+    initCharactersTable()
+    initUsersTable()
     initSpecSelect()
     initDatePicker()
     initParticipationForm()
@@ -115,8 +72,34 @@ $(function () {
     }
 
 
-    function initCharacterTable () {
-        $('#characters').DataTable({
+    function initCharactersTable () {
+        initDataTable({
+            $element: $('#characters'),
+            columns: [
+                null,
+                null,
+                null,
+                {orderable: false},
+                {orderable: false}
+            ]
+        })
+    }
+
+
+    function initUsersTable () {
+        initDataTable({
+            $element: $('#users'),
+            columns: [
+                null,
+                null,
+                {orderable: false}
+            ]
+        })
+    }
+
+
+    function initDataTable ({$element, columns}) {
+        $element.DataTable({
             paging: false,
             language: {
                 sEmptyTable:     'Aucune donnée disponible dans le tableau',
@@ -148,13 +131,7 @@ $(function () {
                     }
                 }
             },
-            columns: [
-                null,
-                null,
-                null,
-                {orderable: false},
-                {orderable: false}
-            ]
+            columns
         })
     }
 

@@ -3,6 +3,7 @@
 <% if @user == current_user || current_user.officer? %>
     <div class="page-actions">
         <%= link_to "Editer", edit_member_user_path(@user.id), class: "button" %>
+        <%= link_to "Supprimer", member_user_path(user), class: "button", method: :delete %>
     </div>
 <% end %>
 

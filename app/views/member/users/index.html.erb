@@ -1,12 +1,25 @@
 <h1>Membres</h1>
-<% @users.each do |user| %>
-  <div>
-    <span class="userlist-nickname"><%= link_to user.nickname, member_user_path(user.id) %></span>
-    <span class="userlist-rank"><%= user.rank %></span>
-    <span class="userlist-email"><%= user.email %></span>
-    <% if user == current_user || current_user.officer? %>
-      <%= link_to "Editer", edit_member_user_path(user), class: "button" %>
-      <%= link_to "Supprimer", member_user_path(user), class: "button", method: :delete %>
-    <% end %>
-  </div>
-<% end %>
+
+
+<table id="users" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Nickname</th>
+            <th>Rang</th>
+            <th>Personnages</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+            <tr>
+                <td><%= link_to user.nickname, member_user_path(user.id) %></td>
+                <td><%= t "ranks." + user.rank %></td>
+                <td>
+                  <% user.characters.each do |character| %>
+                    <%= link_to character.name + "#{"*" if character.main}", member_character_path(character), class: character.playable_class %>
+                  <% end %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

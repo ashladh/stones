@@ -2,8 +2,8 @@
     <div class="character-card-info<%= ' main-character' if character.main %>">
         <div class="character-card-level"><%= character.level %></div>
         <div class="character-card-name"><%= character.name %></div>
-        <span class="character-card-class"><%= character.playable_class %></span>
-        <span class="character-card-class"><%= character.spec %></span>
+        <span class="character-card-class"><%= t "playable_classes." + character.playable_class %></span>
+        <span class="character-card-class"><%= t "specs." + character.playable_class + "." + character.spec %></span>
     </div>
     <div class="character-card-crest <%= character.playable_class %>"></div>
 <% end %>
