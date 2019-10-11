@@ -95,7 +95,6 @@ fr:
       arcane: Arcane
       fire: Feu
       frost: Givre
-
   activerecord:
     errors:
       messages:
