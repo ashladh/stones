@@ -34,6 +34,7 @@
           <% if current_user.officer? %>
             <li><%= link_to "Membres", member_users_path %></li>
           <% end %>
+          <li><%= link_to "Mon compte", edit_member_user_path(current_user.id) %></li>
           <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
         </ul>
       </nav>

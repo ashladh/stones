@@ -19,7 +19,7 @@ module Member
       user_params[:rank] = @user.rank if user_params[:rank] == "guild_master"
       @user.update(user_params)
 
-      redirect_to member_users_path
+      redirect_to member_user_path @user
     end
 
 
