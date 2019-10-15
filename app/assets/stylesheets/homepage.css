@@ -114,11 +114,15 @@
 }
 
 .status-open {
-    color: green;
+    color: #33cc33;
 }
 
 .status-closed {
     color: red;
+}
+
+.status-maybe {
+    color: #ffcc00;
 }
 
 .druid-title {
