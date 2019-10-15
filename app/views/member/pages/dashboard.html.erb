@@ -4,6 +4,13 @@
     <%= link_to "Nouveau personnage", new_member_character_path, class: "button" %>
 </div>
 
+<% unless current_user.member? %>
+    <div class="not-member">
+        <strong>Vous n'êtes pas encore membre !</strong><br>
+        Demandez à un officier de vous passer membre pour avoir accès au reste du site.
+    </div>
+<% end %>
+
 <h2 class="first">Vos personnages</h2>
 
 <% if current_user.has_character? %>
@@ -15,7 +22,9 @@
 </div>
 
 
-<h2>Evenements à venir</h2>
-<div class="dashboard-calendar-events">
-    <%= render @calendar_events %>
-</div>
+<% if current_user.member? %>
+    <h2>Evenements à venir</h2>
+    <div class="dashboard-calendar-events">
+        <%= render @calendar_events %>
+    </div>
+<% end %>

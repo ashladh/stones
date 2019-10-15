@@ -3,6 +3,7 @@ module Member
   class CharactersController < MemberController
 
     before_action :get_character, only: [:edit, :update, :destroy, :show]
+    before_action :check_permissions, only: [:edit, :update, :destroy]
 
 
     def index
@@ -54,6 +55,11 @@ module Member
 
     def get_character
       @character = Character.find(params[:id])
+    end
+
+
+    def check_permissions
+      render_401 unless current_user.can_edit_character? @character
     end
 
     

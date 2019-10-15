@@ -4,7 +4,7 @@ class User
 
   ## Devise
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :trackable
+         :rememberable, :validatable, :trackable
 
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
@@ -35,24 +35,39 @@ class User
     rank == 'registered' || member?
   end
 
+
   def member?
     rank == 'member' || officer?
   end
+
 
   def officer?
     rank == 'officer' || guild_master?
   end
 
+
   def guild_master?
     rank == 'guild_master'
   end
+
 
   def main_character
     characters.where(main: true).first || characters.first
   end
 
+
   def has_character?
     characters.count == 0
+  end
+
+
+  def can_edit_character? character
+    officer? || character.user == self
+  end
+
+
+  def can_edit_user? user
+    officer? || user == self
   end
 
 

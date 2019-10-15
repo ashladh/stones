@@ -1,6 +1,6 @@
 <h1 class="<%= @character.playable_class %>"><%= @character.name %></h1>
 
-<% if current_user.officer? %>
+<% if current_user.can_edit_character? @character %>
     <div class="page-actions">
         <%= link_to "Editer", edit_member_character_path(@character), class: 'button' %>
     </div>

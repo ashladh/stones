@@ -49,7 +49,7 @@ module Member
 
 
     def check_permissions
-      render_401 unless @user == current_user || current_user.officer?
+      render_401 unless current_user.can_edit_user? @user
     end
 
 
