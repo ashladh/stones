@@ -3,7 +3,7 @@
 <% if current_user.can_edit_user? @user %>
     <div class="page-actions">
         <%= link_to "Editer", edit_member_user_path(@user.id), class: "button" %>
-        <%= link_to "Supprimer", member_user_path(@user), class: "button", method: :delete %>
+        <%= link_to "Supprimer", member_user_path(@user), class: "button", method: :delete, data: {confirm: "Confirmer la suppression"} %>
     </div>
 <% end %>
 

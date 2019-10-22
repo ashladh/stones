@@ -4,7 +4,7 @@
 <% if current_user.officer? %>
     <div class="page-actions">
         <%= link_to "Editer", edit_member_calendar_event_path(@calendar_event), class: "button" %>
-        <%= link_to "Supprimer", member_calendar_event_path(@calendar_event), class: "button", method: :delete, confirm: "Confirmer la suppression" %>
+        <%= link_to "Supprimer", member_calendar_event_path(@calendar_event), class: "button", method: :delete, data: {confirm: "Confirmer la suppression"} %>
     </div>
 <% end %>
 
