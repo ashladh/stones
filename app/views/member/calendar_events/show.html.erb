@@ -17,7 +17,7 @@
             <div class="state">En cours</div>
         <% else %>
             <% if current_user.officer? %>
-                <%= link_to "Démarrer l'événement", member_calendar_event_path(@calendar_event, start: true), class: "button", method: :put %>
+                <%= link_to "Démarrer l'événement", member_calendar_event_path(@calendar_event, start: true), class: "button", method: :put, data: {confirm: "Confirmer le début de l'évènement"} %>
             <% else %>
                 <div class="state">Prochainement</div>
             <% end %>
