@@ -3,7 +3,7 @@ module Member
   class PagesController < MemberController
 
     def dashboard
-      @calendar_events = CalendarEvent.where(:date.gte => DateTime.now, :date.lte => DateTime.now + 2.weeks).asc(:date)
+      @calendar_events = CalendarEvent.where(:date.gte => DateTime.now - 6.hours, :date.lte => DateTime.now + 2.weeks).asc(:date)
     end
 
 

@@ -3,10 +3,11 @@ class CalendarEvent
   include Mongoid::Document
 
 
-  field :date, type: DateTime
-  field :name, type: String, default: ""
+  field :date,        type: DateTime
+  field :started_at,  type: DateTime
+  field :name,        type: String, default: ""
   field :description, type: String, default: ""
-  field :raid, type: String, default: ""
+  field :raid,        type: String, default: ""
 
   belongs_to :user
   has_many :event_participations, dependent: :destroy
@@ -75,6 +76,22 @@ class CalendarEvent
     end
 
     stats_
+  end
+
+
+  def start!
+    self.started_at = DateTime.now
+    save!
+  end
+
+
+  def started?
+    !started_at.nil?
+  end
+
+
+  def finished?
+    started? && ((date + 6.hours) < DateTime.now)
   end
 
 end

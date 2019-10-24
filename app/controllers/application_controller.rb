@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  helper_method :real_current_user, :current_user_acting?
+
+  
+
   protected
 
   def configure_permitted_parameters
@@ -15,6 +19,31 @@ class ApplicationController < ActionController::Base
   private
 
 
+  # overrides devise
+  def current_user
+    return @custom_current_user unless @custom_current_user.nil?
+    @custom_current_user = if real_current_user && session[:acting_as_user_id]
+      @fake_user ||= User.find(session[:acting_as_user_id])
+    else
+      real_current_user
+    end
+  end
+
+
+  def real_current_user
+    if @current_user.nil?
+      @current_user = warden.authenticate(:scope => :user) || false
+    end
+
+    @current_user
+  end
+
+
+  def current_user_acting?
+    !session[:acting_as_user_id].nil?
+  end
+
+
   def render_401 layout = false
     respond_to do |format|
       format.html {
@@ -25,6 +54,7 @@ class ApplicationController < ActionController::Base
       }
     end
   end
+
 
   def render_404 layout = false
     respond_to do |format|

@@ -7,7 +7,11 @@ Rails.application.routes.draw do
     get :calendar, to: "pages#calendar"
     get :roster, to: "pages#roster"
 
-    resources :users
+    resources :users do
+      put :stop_acting, on: :collection
+      put :act_as, on: :member
+    end
+    
     resources :characters
     resources :calendar_events do
       get :preview, on: :member

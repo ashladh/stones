@@ -1,4 +1,9 @@
+
 <h1>Mon compte</h1>
+
+<div class="page-actions">
+    <%= link_to("Prendre son identité", act_as_member_user_path(@user), class: "button", method: :put) if current_user.can_act_as?(@user) %>
+</div>
 
 <h2>Editer mes informations</h2>
 

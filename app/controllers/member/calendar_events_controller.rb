@@ -50,7 +50,11 @@ module Member
 
 
     def update
-      @calendar_event.update(calendar_event_params)
+      if params[:start] == "true"
+        @calendar_event.start!
+      else
+        @calendar_event.update(calendar_event_params)
+      end
       redirect_to member_calendar_event_path
     end
 
@@ -70,6 +74,7 @@ module Member
 
 
     def calendar_event_params
+      params[:calendar_event] ||= {}
       params[:calendar_event].permit(:name, :date, :description, :raid)
     end
 

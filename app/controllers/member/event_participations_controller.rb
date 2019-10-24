@@ -4,10 +4,12 @@ module Member
 
     before_action :get_event_participation, only: [:update]
     before_action :check_character_ownership, only: [:update]
-
+    before_action :check_calendar_event, only: [:update]
+    
     def create
       @event_participation = EventParticipation.new(event_participation_params)
       check_character_ownership
+      check_calendar_event
 
       @event_participation.updated_by = current_user
       @event_participation.save!
@@ -40,6 +42,12 @@ module Member
     def check_character_ownership
       character = @event_participation.character
       render_401 unless current_user.officer? || (character && character.user == current_user)
+    end
+
+
+    def check_calendar_event
+      calendar_event = @event_participation.calendar_event
+      render_401 unless current_user.officer? || (calendar_event && !calendar_event.started?)
     end
 
     

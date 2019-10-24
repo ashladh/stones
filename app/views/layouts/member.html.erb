@@ -34,7 +34,10 @@
           <% if current_user.officer? %>
             <li><%= link_to "Membres", member_users_path %></li>
           <% end %>
-          <li><%= link_to "Mon compte", edit_member_user_path(current_user.id) %></li>
+          <li><%= link_to "Mon compte", edit_member_user_path(current_user.id) %> <span>(<%= link_to current_user.nickname, member_user_path(current_user.id) %>)</span></li>
+          <% if current_user_acting? %>
+            <li><%= link_to "Redevenir #{real_current_user.nickname}", stop_acting_member_users_path, method: :put %></li>
+          <% end %>
           <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
         </ul>
       </nav>

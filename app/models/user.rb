@@ -70,6 +70,11 @@ class User
     officer? || user == self
   end
 
+  
+  def can_act_as? user
+    guild_master? && !user.guild_master?
+  end
+
 
   private
 

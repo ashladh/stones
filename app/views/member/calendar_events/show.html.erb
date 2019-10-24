@@ -1,4 +1,3 @@
-
 <h1><%= @calendar_event.name %></h1>
 
 <% if current_user.officer? %>
@@ -10,16 +9,32 @@
 
 
 <div class="calendar-event-banner <%= @calendar_event.raid %>">
+
+    <div class="calendar-event-actions">
+        <% if @calendar_event.finished? %>
+            <div class="state">Terminé</div>
+        <% elsif @calendar_event.started? %>
+            <div class="state">En cours</div>
+        <% else %>
+            <% if current_user.officer? %>
+                <%= link_to "Démarrer l'événement", member_calendar_event_path(@calendar_event, start: true), class: "button", method: :put %>
+            <% else %>
+                <div class="state">Prochainement</div>
+            <% end %>
+        <% end %>
+    </div>
+
     <div class="calendar-event-info">
         <div class="calendar-event-date"><%= l @calendar_event.date, format: :long %></div>
         <div class="calendar-event-description"><%= @calendar_event.description %></div>
         <div class="calendar-event-owner">Créé par <%= @calendar_event.user.nickname %></div>
         <%= render 'stats', stats: @calendar_event.stats %>
     </div>
+
+    
 </div>
 
-
-<%= render 'your_participation', event_participation: @event_participation %>
+<%= render 'your_participation', event_participation: @event_participation, started: @calendar_event.started? %>
 
 
 <div class="roster-manager">

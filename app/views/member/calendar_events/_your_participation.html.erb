@@ -6,13 +6,13 @@
             avec le personnage
             <strong><%= event_participation.character.name %></strong>
             <br>
-            <div class="link"><%= link_to "Modifier votre disponibilité", "", class: "button" %></div>
+            <div class="link"><%= link_to("Modifier votre disponibilité", "", class: "button") unless started %></div>
         <% else %>
-            <%= link_to "Indiquez votre disponibilité", "", class: "button" %>
+            <%= link_to("Indiquez votre disponibilité", "", class: "button") unless started %>
         <% end %>
     </div>
 
     <div class="your-participation-form">
-        <%= render 'member/event_participations/form', event_participation: event_participation %>
+        <%= render('member/event_participations/form', event_participation: event_participation) unless started %>
     </div>
 </div>

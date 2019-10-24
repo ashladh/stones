@@ -22,6 +22,9 @@ body {
 
 #nav ul li {
     display: block;
+    span {
+        color: rgba(255, 255, 255, 0.4);
+    }
 }
 
 #nav ul li a {
@@ -804,6 +807,16 @@ body .tippy-tooltip {
     }
     &.molten_core {
         background-image: image-url('banner_ragnaros.jpg');
+    }
+
+    .calendar-event-actions {
+        float: right;
+        .state {
+            border-radius: 4px;
+            background: rgba(170, 255, 255, 0.1);
+            font-size: 0.9em;
+            padding: 0.5em;
+        }
     }
 }
 
