@@ -29,7 +29,7 @@
           <% if current_user.member? %>
             <li><%= link_to "Calendrier", member_calendar_path %></li>
             <li><%= link_to "Roster", member_characters_path %></li>
-            <li><%= link_to "DKP", "https://docs.google.com/spreadsheets/d/15f6wKtBqHDZipibd-XpGMfrNXMGoWzDawHfCaPVQVxM/edit#gid=666143556" %></li>
+            <li><%= link_to "DKP", "https://docs.google.com/spreadsheets/d/15f6wKtBqHDZipibd-XpGMfrNXMGoWzDawHfCaPVQVxM/edit?usp=sharing" %></li>
           <% end %>
           <% if current_user.officer? %>
             <li><%= link_to "Membres", member_users_path %></li>
